@@ -17,7 +17,7 @@ const ImageGrid = () => {
 
   useEffect(() => {
     const getImage = async () => {
-      const result = await axios.get("http://localhost:4000/api/user/getimage");
+      const result = await axios.get("https://harry-photo-backend.vercel.app/api/user/getimage");
       if (result) setImages(result.data.data);
       console.log("Images:", images);
     };
@@ -70,7 +70,7 @@ const ImageGrid = () => {
                 <Link to={`/imagedownload`} className="grow" state={{ data }} key={data.image}>
                   <img
                     loading="lazy"
-                    src={`http://localhost:4000/images/` + data.image}
+                    src={`https://harry-photo-backend.vercel.app/images/` + data.image}
                     key={data._id}
                     alt="image"
                     className="object-cover w-full h-[292px]"
