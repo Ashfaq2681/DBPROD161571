@@ -13,9 +13,6 @@ app.use(cors());
 app.use(express.static('uploads'))
 
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', '*');
-  res.header('Access-Control-Allow-Methods', '*');
   console.log(req.path, req.method);
   next();
 });
