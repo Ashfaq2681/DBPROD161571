@@ -1,15 +1,19 @@
 import { memo } from "react";
 import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react'
 import { Link } from "react-router-dom";
+import { useAuthContext } from "../CustomHooks/useAuthContext";
 
 const UserPanel = ({ handleClick, user }) => {
+
+  const { plan } = useAuthContext();
+
   return (
     <>
       <Menu>
         <MenuButton className="inline-flex items-center gap-2 rounded-md  py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10">
           <img
             loading="lazy"
-            src={user.email ? userpic : user.picture}
+            src={user.email ? user.picture : user.pic}
             alt="user"
             className="w-10 h-10 p-1 rounded-full bg-[#E3A9FC]"
           />
@@ -38,7 +42,7 @@ const UserPanel = ({ handleClick, user }) => {
               >
                 <img
                   loading="lazy"
-                  src="../assets/icons/admin.svg"
+                  src="./header/admin.svg"
                   className="size-4 fill-white/30"
                 />
                 Dashboard
@@ -51,7 +55,7 @@ const UserPanel = ({ handleClick, user }) => {
               <button className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
                 <img
                   loading="lazy"
-                  src="../assets/icons/edit.svg"
+                  src="./header/edit.svg"
                   className="size-4 fill-white/30"
                 />
                 Duplicate
@@ -64,10 +68,24 @@ const UserPanel = ({ handleClick, user }) => {
               <button className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
                 <img
                   loading="lazy"
-                  src="../assets/icons/edit.svg"
+                  src="./header/edit.svg"
                   className="size-4 fill-white/30"
                 />
                 Archive
+                <kbd className="ml-auto hidden font-sans text-xs text-white/50 group-data-[focus]:inline">
+                  ⌘A
+                </kbd>
+              </button>
+            </MenuItem>
+            <div className="my-1 mx-2 h-px bg-gray-300" />
+            <MenuItem>
+              <button className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
+                <img
+                  loading="lazy"
+                  src="./header/edit.svg"
+                  className="size-4 fill-white/30"
+                />
+                Plan: <p>{plan ? plan.plan : 'None'}</p>
                 <kbd className="ml-auto hidden font-sans text-xs text-white/50 group-data-[focus]:inline">
                   ⌘A
                 </kbd>
@@ -81,7 +99,7 @@ const UserPanel = ({ handleClick, user }) => {
               >
                 <img
                   loading="lazy"
-                  src="../assets/icons/out.svg"
+                  src="./header/out.svg"
                   className="size-4 fill-white/30"
                 />
                 Sign out

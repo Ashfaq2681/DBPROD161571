@@ -1,9 +1,10 @@
-
-import { useState } from "react";
+import { memo, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const [input, setInput] = useState("");
   const [searchResult, setSearchResult] = useState(null)
+  const [searchError, setSearchError] = useState(false)
 
   const fetchData = (value) => {
     fetch("http://localhost:4000/api/user/getimage")
@@ -26,7 +27,12 @@ const Hero = () => {
   const handleChange = (value) => {
     setInput(value);
     fetchData(value);
+    setSearchError(false)
   };
+
+  const handleSearch = () => {
+    if (input === "") setSearchError(true)
+  }
 
   return (
     <>
@@ -48,6 +54,16 @@ const Hero = () => {
             </p>
             <form className="hidden md:flex flex-col relative">
               <div className="relative w-full">
+              {searchError && (
+                <p className="bg-red-300 p-5 flex flex-row items-center gap-4 my-5  rounded-xl text-[20px]">
+                  <img
+                    src="./header/warning.png"
+                    className="w-10 h-10"
+                    alt="warning"
+                  />
+                  Search bar is Empty, please type something to search
+                </p>
+              )}
               <input
                 value={input}
                 onChange={(e) => handleChange(e.target.value)}
@@ -56,15 +72,15 @@ const Hero = () => {
                 placeholder="Search image..."
                 className="text-[20px] rounded-full border-2 border-gray-300 px-5 py-2 w-full focus:outline-none"
               />
-              <button className="px-8  rounded-full bg-[#4A16D8] text-white absolute right-0 mr-1.5 mt-[6px] text-[24px]">
+              {input === "" && 
+              <button onClick={handleSearch} className="px-8  rounded-full bg-[#4A16D8] text-white absolute right-0 mr-1.5 mt-[6px] text-[24px]">
                 Search
-              </button>
+              </button>}
+              {input !== "" && 
+              <Link to={`/searchResult`} className="px-8  rounded-full bg-[#4A16D8] text-white absolute right-0 mr-1.5 mt-[6px] text-[24px]" state={{ searchResult }} key={searchResult}>
+                Search
+              </Link>}
               </div>
-            <div className= {`bg-white border border-gray-300 rounded-md z-10 absolute mt-10  ${searchResult ? "flex p-2" : "hidden"} flex-col`}>
-            {searchResult && searchResult.map((item)=> (
-              <p key={item.image}>{item.image}</p>
-            ))}
-            </div>
             </form>
           </div>
         </div>
@@ -73,4 +89,5 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default memo(Hero);
+

@@ -1,10 +1,12 @@
 import { useState, lazy, Suspense, memo } from "react";
-const UserPanel = lazy(() => import("./UserPanel"))
+
 import Explore from "./Explore"
 import { Link } from "react-router-dom";
 import { useLogout } from "../CustomHooks/useLogout";
 import { useAuthContext } from "../CustomHooks/useAuthContext";
 import { googleLogout } from "@react-oauth/google";
+import UserPanel from "./UserPanel";
+
 
 const Header = () => {
   const { logout } = useLogout();
@@ -57,7 +59,7 @@ const Header = () => {
                 alt="profileicon"
                 className="p-2 bg-[#E3A9FC] text-black w-2 h-2 rounded-sm"
               />
-              <p>{user.email ? user.email : user.name}</p>
+              <p>{user.email ? user.name : user.email}</p>
             </div>
             <div className="hidden md:flex">
               <Suspense><UserPanel user={user} handleClick={handleClick}/></Suspense>

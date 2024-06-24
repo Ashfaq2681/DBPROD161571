@@ -17,29 +17,29 @@ const ImageGrid = () => {
 
   useEffect(() => {
     const getImage = async () => {
-      const result = await axios.get("https://harry-photo-backend.vercel.app/api/user/getimage");
+      const result = await axios.get("http://localhost:4000/api/user/getimage");
       if (result) setImages(result.data.data);
       console.log("Images:", images);
     };
     getImage();
   }, []);
 
-  // const handleActive = (index) => {
-  //   setIsActive(index);
-  //   if (index == "1") {
-  //     setValue(psdsList)
-  //   } else if (index == "2") {
-  //     setValue(photoList)
-  //   } else if (index == "3") {
-  //     setValue(mockList)
-  //   } else if (index == "4") {
-  //     setValue(socialList)
-  //   } else if (index == "5") {
-  //     setValue(pngList)
-  //   } else if (index == "6") {
-  //     setValue(vectorList)
-  //   }
-  // };
+  const handleActive = (index) => {
+    setIsActive(index);
+    if (index == "1") {
+      setValue(psdsList)
+    } else if (index == "2") {
+      setValue(photoList)
+    } else if (index == "3") {
+      setValue(mockList)
+    } else if (index == "4") {
+      setValue(socialList)
+    } else if (index == "5") {
+      setValue(pngList)
+    } else if (index == "6") {
+      setValue(vectorList)
+    }
+  };
 
   return (
     <>
@@ -70,7 +70,7 @@ const ImageGrid = () => {
                 <Link to={`/imagedownload`} className="grow" state={{ data }} key={data.image}>
                   <img
                     loading="lazy"
-                    src={`https://harry-photo-backend.vercel.app/images/` + data.image}
+                    src={`http://localhost:4000/images/` + data.image}
                     key={data._id}
                     alt="image"
                     className="object-cover w-full h-[292px]"

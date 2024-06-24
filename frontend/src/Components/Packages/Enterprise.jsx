@@ -1,11 +1,31 @@
 import { useState } from "react";
+import { usePlan } from "../../CustomHooks/usePlan";
 
 const Enterprise = () => {
   const [monthly, setMonthly] = useState(true);
+  const { checkSubscription } = usePlan();
 
   const handleMonthly = () => {
     setMonthly(!monthly);
   };
+
+  const EnterpriseFree = {
+    plan: "Enterprise Free",
+    price: 0,
+    quantity: "100"
+  }
+
+  const EnterprisePro = {
+    plan: "Enterprise Pro",
+    price: 49,
+    quantity: "500"
+  }
+
+  const FullEnterprise = {
+    plan: "Full Agency",
+    price: 490,
+    quantity: "500"
+  }
 
   return (
     <section className="text-[#727272] mt-10 lg:mt-0">
@@ -47,7 +67,7 @@ const Enterprise = () => {
             </button>
           </div>
           <div className="flex flex-col lg:flex-row flex-wrap justify-center gap-14 text-[#727272] mt-24">
-            <div className="p-10 bg-white rounded-md shadow-lg hover:shadow-2xl duration-300 ease-in-out">
+            <div id="free" className="p-10 bg-white rounded-md shadow-lg hover:shadow-2xl duration-300 ease-in-out">
               <p className="text-[24px] font-bold">Basic</p>
               <span className="text-[48px] font-bold text-black flex flex-row items-center gap-3">
                 Free <p className="text-[#727272] text-[20px]">/ Month</p>
@@ -62,11 +82,11 @@ const Enterprise = () => {
                 <li className="flex flex-row gap-3 my-10"><img loading="lazy" src="./legal/tick.svg" alt="tick" className="w-6 h-6"/>Mac/Windows App</li>
                 <li className="flex flex-row gap-3 my-10"><img loading="lazy" src="./legal/tick.svg" alt="tick" className="w-6 h-6"/>Free lifetime updates</li>
               </ul>
-              <button className="px-8 rounded-full bg-[#4A16D8] text-white border border-[#4A16D8] mx-auto font-bold py-2 w-full mb-3">
+              <button onClick={() => checkSubscription(EnterpriseFree)} className="px-8 rounded-full bg-[#4A16D8] text-white border border-[#4A16D8] mx-auto font-bold py-2 w-full mb-3">
                 Buy Premium Images
               </button>
             </div>
-            <div className="p-10 bg-[#4A16D8] rounded-md shadow-lg hover:shadow-2xl duration-300 ease-in-out text-gray-300">
+            <div id="pro" className="p-10 bg-[#4A16D8] rounded-md shadow-lg hover:shadow-2xl duration-300 ease-in-out text-gray-300">
               <p className="text-[24px] font-bold">Pro</p>
               <span className="text-[48px] font-bold text-white flex flex-row items-center gap-3">
                 $49 <p className="text-gray-200 text-[20px]">/ Month</p>
@@ -81,11 +101,11 @@ const Enterprise = () => {
                 <li className="flex flex-row gap-3 my-10"><img loading="lazy" src="./legal/tick.svg" alt="tick" className="w-6 h-6 bg-white rounded-full"/>Mac/Windows App</li>
                 <li className="flex flex-row gap-3 my-10"><img loading="lazy" src="./legal/tick.svg" alt="tick" className="w-6 h-6 bg-white rounded-full"/>Free lifetime updates</li>
               </ul>
-              <button className="px-8 rounded-full bg-white text-[#4A16D8] border border-white mx-auto font-bold py-2 w-full mb-3">
+              <button onClick={() => checkSubscription(EnterprisePro)} className="px-8 rounded-full bg-white text-[#4A16D8] border border-white mx-auto font-bold py-2 w-full mb-3">
                 Buy Premium Images
               </button>
             </div>
-            <div className="p-10 bg-white rounded-md shadow-lg hover:shadow-2xl duration-300 ease-in-out">
+            <div id="full" className="p-10 bg-white rounded-md shadow-lg hover:shadow-2xl duration-300 ease-in-out">
               <p className="text-[24px] font-bold">Enterprise</p>
               <span className="text-[48px] font-bold text-black flex flex-row items-center gap-3">
                 $490 <p className="text-[#727272] text-[20px]">/ Month</p>
@@ -100,7 +120,7 @@ const Enterprise = () => {
                 <li className="flex flex-row gap-3 my-10"><img loading="lazy" src="./legal/tick.svg" alt="tick" className="w-6 h-6"/>Mac/Windows App</li>
                 <li className="flex flex-row gap-3 my-10"><img loading="lazy" src="./legal/tick.svg" alt="tick" className="w-6 h-6"/>Free lifetime updates</li>
               </ul>
-              <button className="px-8 rounded-full bg-[#4A16D8] text-white border border-[#4A16D8] mx-auto font-bold py-2 w-full mb-3">
+              <button onClick={() => checkSubscription(FullEnterprise)} className="px-8 rounded-full bg-[#4A16D8] text-white border border-[#4A16D8] mx-auto font-bold py-2 w-full mb-3">
                 Buy Premium Images
               </button>
             </div>

@@ -39,6 +39,34 @@ export const HeroButtons = [
   },
 ];
 
+export const AccountSettings = [
+  {
+    id: "1",
+    name: "My Profile",
+    link: "#myprofile",
+  },
+  {
+    id: "2",
+    name: "Billing",
+    link: "#billing",
+  },
+  {
+    id: "3",
+    name: "Team Members",
+    link: "#teammembers",
+  },
+  {
+    id: "4",
+    name: "Notifications",
+    link: "#social",
+  },
+  {
+    id: "5",
+    name: "Security",
+    link: "#pngs",
+  },
+];
+
 export const FooterItems = [
   {
     id: "1",

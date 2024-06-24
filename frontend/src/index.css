@@ -51,6 +51,10 @@ hr {
     @apply px-8 py-1 lg:my-10 xl:my-20 border rounded-full text-[16px] duration-300
 }
 
+.accountSettingButtons {
+  @apply px-8 py-1 my-5 md:my-10 text-[16px]
+}
+
 #submenu {
     opacity: 0;
     visibility: hidden;

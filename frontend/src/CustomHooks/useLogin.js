@@ -10,7 +10,7 @@ export const useLogin = () => {
         setIsLoading(true)
         setError(null)
 
-        const response = await fetch('https://harry-photo-backend.vercel.app/api/user/login', {
+        const response = await fetch('https://localhost:4000/api/user/login', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ email, password })
@@ -32,11 +32,11 @@ export const useLogin = () => {
         }
     }
 
-    const googleLogin = async (name, picture) => {
+    const googleLogin = async (name, picture, given_name, family_name, email) => {
         setIsLoading(true)
         setError(null)
 
-        const response = {name, picture}
+        const response = {name, picture, given_name, family_name, email}
 
         if (!response) {
             setIsLoading(false)

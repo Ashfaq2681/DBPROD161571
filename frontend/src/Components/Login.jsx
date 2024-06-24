@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLogin } from "../CustomHooks/useLogin";
 import { GoogleLogin } from "@react-oauth/google";
@@ -8,11 +8,16 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { login, googleLogin, error, isLoading } = useLogin();
+  // const authSelectRef = useRef(null)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     await login(email, password);
   };
+
+  // const selectAuth = () => {
+  //   authSelectRef.current.click()
+  // }
 
   return (
     <section className="bg-[#F9FAFB] h-lvh flex flex-row justify-center pt-20 mt-5 lg:mt-0">
@@ -53,6 +58,7 @@ const Login = () => {
         {error && <p className="text-red-500 text-[18px]">{error}</p>}
         <p>Or Continue With</p>
         <div className="flex flex-row justify-center items-center gap-2 my-2">
+
           <GoogleLogin
             type="icon"
             text="Google"
@@ -60,13 +66,14 @@ const Login = () => {
               const credits = credentialResponse.credential;
               const decoded = jwtDecode(credits);
               // console.log(decoded);
-              await googleLogin(decoded.name, decoded.picture);
+              await googleLogin(decoded.name, decoded.picture, decoded.given_name, decoded.family_name, decoded.email);
             }}
             onError={() => {
               console.log("Login Failed");
             }}
           />
-          {/* <button  onClick={() => googleLogin()} href='#' className='border border-[#727272] rounded-lg p-2 flex flex-row justify-center items-center gap-4 pr-5 text-[#969696]'><img src={google} alt='google' className='w-6 h-6'/>Google</button> */}
+
+          {/* <button onClick={selectAuth} href='#' className='border border-[#727272] rounded-lg p-2 flex flex-row justify-center items-center gap-4 pr-5 text-[#969696]'><img src={google} alt='google' className='w-6 h-6'/>Google</button> */}
           <button
             href="#"
             className="border border-[#727272] rounded-lg p-2 flex flex-row justify-center items-center gap-4 pr-5 text-[#969696]"
@@ -88,7 +95,7 @@ const Login = () => {
       </div>
       <img
         loading="lazy"
-        src="./grid/img28.jpeg"
+        src="./grid/black-girl-pose-jeans-top-sitting.jpeg"
         alt="login-image"
         className="hidden rounded-r-[16px] md:inline-block md:h-[625px] lg:h-[664px] lg:w-[481px] object-cover"
       />

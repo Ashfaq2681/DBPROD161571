@@ -129,7 +129,7 @@ const Signup = () => {
       </div>
       <img
         loading="lazy"
-        src="./grid/img28.jpeg"
+        src="./grid/black-girl-pose-jeans-top-sitting.jpeg"
         alt="login-image"
         className="hidden rounded-r-[16px] md:inline-block md:h-[680px] lg:h-[664px] md:w-[363px] lg:w-[481px] object-cover"
       />

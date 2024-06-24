@@ -36,6 +36,9 @@ const Editorial = lazy(() => import("./Components/Resources/Editorial"))
 const Featured = lazy(() => import("./Components/Resources/Featured"))
 const Premium = lazy(() => import("./Components/Resources/Premium"))
 const Trending = lazy(() => import("./Components/Resources/Trending"))
+const Success = lazy(() => import("./Components/paymentSessionPages/Success"))
+const Cancel = lazy(() => import("./Components/paymentSessionPages/Cancel"))
+const SearchResult = lazy(() => import("./Components/SearchResult"))
 
 const App = () => {
 
@@ -87,6 +90,9 @@ const App = () => {
           <Route path="/featured" element={<><ScrollToTop/><Featured/></>}/>
           <Route path="/premium" element={<><ScrollToTop/><Premium/></>}/>
           <Route path="/trending" element={<><ScrollToTop/><Trending/></>}/>
+          <Route path="/success" element={<><ScrollToTop/><Success/></>}/>
+          <Route path="/cancel" element={<><ScrollToTop/><Cancel/></>}/>
+          <Route path="/searchResult" element={<><ScrollToTop/><SearchResult/></>}/>
         </Routes>
         <Footer/>
         </Suspense>

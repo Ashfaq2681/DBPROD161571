@@ -1,54 +1,93 @@
-const express = require("express")
-const multer = require("multer")
-const images = require("../models/imageModel.js")
+const express = require("express");
+const multer = require("multer");
+const images = require("../models/imageModel.js");
+const userImages = require("../models/userImageModel.js");
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, 'uploads/images/')
-    },
-    filename: function (req, file, cb) {
-      const uniqueSuffix = Date.now()
-      cb(null, uniqueSuffix + file.originalname)
-    }
-  })
-  
-  const upload = multer({ storage: storage })
+
+const storageHome = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads/images/home");
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now();
+    cb(null, uniqueSuffix + file.originalname);
+  },
+});
+
+const uploadHome = multer({ storage: storageHome });
+
+const storageUser = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads/images/user");
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now();
+    cb(null, uniqueSuffix + file.originalname);
+  },
+});
+
+const uploadUser = multer({ storage: storageUser });
 
 //controller functions
-const { signupUser, loginUser } = require("../controllers/userController")
+const { signupUser, loginUser, createcheckoutSession } = require("../controllers/userController");
 
-const router = express.Router()
+const router = express.Router();
 
 //login route
-router.post("/login", loginUser)
+router.post("/login", loginUser);
 
 //signup route
-router.post("/signup", signupUser)
+router.post("/signup", signupUser);
 
-//admin route
-router.post("/uploadimage", upload.single("file"), async (req, res) => {
-    console.log(req.body)
-    const fileName = req.file.filename
+//create-checkout-session route
+router.post("/create-checkout-session", createcheckoutSession)
+
+//admin image upload route
+router.post(
+  "/uploadimage/home",
+  uploadHome.single("file"),
+  async (req, res) => {
+    console.log(req.body);
+    const fileName = req.file.filename;
 
     try {
-        await images.create({ image: fileName })
-        res.status(200)
+      await images.create({ image: fileName });
+      res.status(200);
     } catch (error) {
-        res.status(404)
-        console.log(error)
+      res.status(404);
+      console.log(error);
     }
-})
+  }
+);
 
-router.get("/getimage", async (req,res) => {
+//user image upload route
+router.post(
+  "/uploadimage/user",
+  uploadUser.any("file"),
+  async (req, res) => {
+    console.log(req.body);
+    const fileName = req.body;
+
     try {
-        images.find({})
-        .then((data) => {
-            res.send({ status: "ok", data: data })
-        })
+      await userImages.create({ image: fileName });
+      res.status(200);
     } catch (error) {
-        res.status(404)
-        console.log(error)
+      res.status(404);
+      console.log(error);
     }
-})
+  }
+);
 
-module.exports = router
+//home image retrieval route
+router.get("/getimage", async (req, res) => {
+  try {
+    images.find({}).then((data) => {
+      res.send({ status: "ok", data: data });
+    });
+  } catch (error) {
+    res.status(404);
+    console.log(error);
+  }
+});
+
+module.exports = router;
