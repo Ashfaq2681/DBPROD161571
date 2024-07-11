@@ -99,6 +99,7 @@ const Signup = () => {
         <GoogleLogin
           type="icon"
           text="Google"
+          size="large"
           onSuccess={async (credentialResponse) => {
             const credits = credentialResponse.credential
             const decoded = jwtDecode(credits)
@@ -111,10 +112,10 @@ const Signup = () => {
         />
           <button
             href="#"
-            className="border border-[#727272] rounded-lg p-2 flex flex-row justify-center items-center gap-4 pr-5 text-[#969696]"
+            className="border border-[#d6d6d6] rounded-lg p-2 flex flex-row justify-center items-center gap-4  text-[#969696]"
           >
             <img loading="lazy" src="./login/apple.png" alt="apple" className="w-6 h-6" />
-            Apple
+            
           </button>
         </div>
         <p className="mt-5">

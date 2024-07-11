@@ -8,16 +8,12 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { login, googleLogin, error, isLoading } = useLogin();
-  // const authSelectRef = useRef(null)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     await login(email, password);
   };
 
-  // const selectAuth = () => {
-  //   authSelectRef.current.click()
-  // }
 
   return (
     <section className="bg-[#F9FAFB] h-lvh flex flex-row justify-center pt-20 mt-5 lg:mt-0">
@@ -61,7 +57,8 @@ const Login = () => {
 
           <GoogleLogin
             type="icon"
-            text="Google"
+            text="signin"
+            size="large"
             onSuccess={async (credentialResponse) => {
               const credits = credentialResponse.credential;
               const decoded = jwtDecode(credits);
@@ -73,13 +70,13 @@ const Login = () => {
             }}
           />
 
-          {/* <button onClick={selectAuth} href='#' className='border border-[#727272] rounded-lg p-2 flex flex-row justify-center items-center gap-4 pr-5 text-[#969696]'><img src={google} alt='google' className='w-6 h-6'/>Google</button> */}
+          {/* <button href='#' className='border border-[#727272] rounded-lg p-2 flex flex-row justify-center items-center gap-4 pr-5 text-[#969696]'><img src="./login/google.png" alt='google' className='w-6 h-6'/>Google</button> */}
           <button
             href="#"
-            className="border border-[#727272] rounded-lg p-2 flex flex-row justify-center items-center gap-4 pr-5 text-[#969696]"
+            className="border border-[#d6d6d6] rounded-md p-2 flex flex-row justify-center items-center gap-4  text-[#969696]"
           >
             <img loading="lazy" src="./login/apple.png" alt="apple" className="w-6 h-6" />
-            Apple
+            
           </button>
         </div>
         <p className="mt-5">

@@ -39,6 +39,7 @@ const Trending = lazy(() => import("./Components/Resources/Trending"))
 const Success = lazy(() => import("./Components/paymentSessionPages/Success"))
 const Cancel = lazy(() => import("./Components/paymentSessionPages/Cancel"))
 const SearchResult = lazy(() => import("./Components/SearchResult"))
+const CustomChatBot = lazy(() => import("./Components/ChatBot/ChatBot"))
 
 const App = () => {
 
@@ -95,6 +96,7 @@ const App = () => {
           <Route path="/searchResult" element={<><ScrollToTop/><SearchResult/></>}/>
         </Routes>
         <Footer/>
+        <div className="bottom-0 right-0 px-5 pb-5 z-auto float-end fixed overflow-hidden"><CustomChatBot/></div>
         </Suspense>
       </BrowserRouter>
     </div>

@@ -3,6 +3,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../CustomHooks/useAuthContext";
 import Settings from "./AccoutSettings/Settings";
+import Product from "./AccoutSettings/Product";
+import Article from "./AccoutSettings/Article";
 
 const Dashboard = () => {
   const { user, plan } = useAuthContext();
@@ -190,7 +192,7 @@ const Dashboard = () => {
           </p>
         </div>
         <div
-          className={`flex flex-row justify-start items-center gap-2 py-2 w-full mt-2 mb-16 cursor-pointer ${
+          className={`flex flex-row justify-start items-center gap-2 py-2 w-full mt-2 cursor-pointer ${
             current === "2" && "bg-[#E1E6EF] font-bold rounded-r-lg"
           }`}
           onClick={() => setCurrent("2")}
@@ -208,12 +210,32 @@ const Dashboard = () => {
             Product
           </p>
         </div>
-        <hr />
         <div
-          className={`flex flex-row justify-start items-center gap-2 py-2 w-full mt-2 cursor-pointer ${
+          className={`flex flex-row justify-start items-center gap-2 py-2 w-full mt-2 mb-16 cursor-pointer ${
             current === "3" && "bg-[#E1E6EF] font-bold rounded-r-lg"
           }`}
           onClick={() => setCurrent("3")}
+        >
+          <img
+            src={
+              current === "3"
+                ? "./header/product-filled.png"
+                : "./header/product.png"
+            }
+            alt="overviewfilled"
+            className="pl-5"
+          />
+          <p className="text-[14px] font-light hidden md:inline-block">
+            Articles
+          </p>
+        </div>
+        <hr />
+        <p className="pl-5 pt-5 font-bold">Support</p>
+        <div
+          className={`flex flex-row justify-start items-center gap-2 py-2 w-full mt-2 cursor-pointer ${
+            current === "4" && "bg-[#E1E6EF] font-bold rounded-r-lg"
+          }`}
+          onClick={() => setCurrent("4")}
         >
           <img
             src="./header/settings.png"
@@ -487,7 +509,9 @@ const Dashboard = () => {
           </div>
         </div>
       )}
-      {current === "3" && <Settings user={user} plan={plan}/>}
+      {current === "2" && <Product user={user} plan={plan}/>}
+      {current === "3" && <Article/>}
+      {current === "4" && <Settings user={user} plan={plan}/>}
     </section>
   );
 };

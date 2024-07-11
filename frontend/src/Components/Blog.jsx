@@ -1,9 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HeroButtons, blogCardItems } from ".";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Blog = () => {
   const [isActive, setIsActive] = useState(null);
+
+  useEffect(() => {
+    const getImage = async () => {
+      const result = await axios.get("http://localhost:4000/api/user/getimage");
+      if (result) {
+        const result_images = result.data.data
+        for (let i = 0; i < result_images.length; i++) {
+          blogCardItems[i].img = result_images[i+20].image
+          console.log(blogCardItems[i].img)
+        }
+      }
+    };
+    getImage();
+  }, []);
 
   const handleActive = (index) => {
     setIsActive(index);
@@ -43,7 +58,7 @@ const Blog = () => {
       <div className="flex flex-row flex-wrap gap-7 lg:justify-start lg:px-40">
         {blogCardItems.filter(firstIndex).map((i) => (
           <div key={i.id} className=" md:pb-12 lg:max-w-[975px]">
-            <img loading="lazy" src={i.img} alt={i} className="w-full object-contain" />
+            <img loading="lazy" src={`http://localhost:4000/images/` + i.img} alt={i} className="w-full object-contain" />
             <p className="text-[36px] px-3 my-4">{i.desc}</p>
             <Link
               to={`/blogsinglepage`}
@@ -61,7 +76,7 @@ const Blog = () => {
           >
             <img
               loading="lazy"
-              src={i.img}
+              src={`http://localhost:4000/images/` + i.img}
               alt={i}
               className="w-full object-cover h-[240px] md:h-[282px]"
             />
@@ -88,7 +103,7 @@ const Blog = () => {
           >
             <img
               loading="lazy"
-              src={i.img}
+              src={`http://localhost:4000/images/` + i.img}
               alt={i}
               className="w-full object-cover h-[240px] md:h-[282px]"
             />

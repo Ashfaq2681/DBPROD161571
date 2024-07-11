@@ -2,6 +2,7 @@ const express = require("express");
 const multer = require("multer");
 const images = require("../models/imageModel.js");
 const userImages = require("../models/userImageModel.js");
+const article = require("../models/articleModel.js");
 
 
 const storageHome = multer.diskStorage({
@@ -13,8 +14,18 @@ const storageHome = multer.diskStorage({
     cb(null, uniqueSuffix + file.originalname);
   },
 });
-
 const uploadHome = multer({ storage: storageHome });
+
+const storageArticle = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads/articleImages");
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now();
+    cb(null, uniqueSuffix + file.originalname);
+  },
+});
+const uploadArticle = multer({ storage: storageArticle });
 
 const storageUser = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -36,6 +47,8 @@ const router = express.Router();
 //login route
 router.post("/login", loginUser);
 
+//google login route
+
 //signup route
 router.post("/signup", signupUser);
 
@@ -52,6 +65,25 @@ router.post(
 
     try {
       await images.create({ image: fileName });
+      res.status(200);
+    } catch (error) {
+      res.status(404);
+      console.log(error);
+    }
+  }
+);
+
+//Article Upload route
+router.post(
+  "/uploadarticle",
+  uploadHome.single("file"),
+  async (req, res) => {
+    console.log(req.body);
+    const fileName = req.file.filename;
+    const desc = req.body
+
+    try {
+      await article.create({ image: fileName, description: desc });
       res.status(200);
     } catch (error) {
       res.status(404);
