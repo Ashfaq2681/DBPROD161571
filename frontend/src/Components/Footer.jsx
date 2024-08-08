@@ -43,8 +43,8 @@ const Footer = () => {
           </span>
         </div>
       </div>
-      <p className="bg-[#5E5E5E] text-white text-[22px] text-center py-2">
-        Copyright © 2024 Harry Photo, All rights reserved.
+      <p className="bg-[#12181F] text-white text-[22px] text-center py-2">
+        C2022-Blusaquarecommunication, all right reserved.
       </p>
     </footer>
   );

@@ -39,7 +39,7 @@ const Trending = lazy(() => import("./Components/Resources/Trending"))
 const Success = lazy(() => import("./Components/paymentSessionPages/Success"))
 const Cancel = lazy(() => import("./Components/paymentSessionPages/Cancel"))
 const SearchResult = lazy(() => import("./Components/SearchResult"))
-const CustomChatBot = lazy(() => import("./Components/ChatBot/ChatBot"))
+const CustomChatBot = lazy(() => import("./Components/CustomChatBot/CustomChatBot"))
 
 const App = () => {
 
