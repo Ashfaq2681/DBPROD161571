@@ -7,7 +7,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
-    <GoogleOAuthProvider clientId="326245047964-6qlavjq4uaa7g9qs28ntln8rkoddh7m4.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId="">
     <AuthContextProvider>
       <App />
     </AuthContextProvider>
