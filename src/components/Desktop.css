@@ -1,0 +1,214 @@
+
+  .custom-margin {
+    margin: 160px;
+    
+}
+.heading {
+    width: 657px;
+    height: 54px;
+    margin-top: 100px;
+    color: #505153;
+    font-weight: 500;
+    font: 'Almarai';
+}
+
+.heading h1 {
+    font-size: 48px;
+}
+
+.paragraph{
+    width: 667px;
+    height: 108px;
+    color: #505153;
+    font-weight: 500;
+    font: 'Almarai';
+    margin-top: 30px;
+
+}
+.paragrapg p {
+    
+    font-size: 24px;
+}
+.searchbar{
+    margin-bottom: 20px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 2px solid rgba(80, 81, 83, 0.3);
+    border-radius: 50px;
+    overflow: hidden;
+    max-width: 524px;
+    height: 57px;
+}
+.searchbar button{
+    width: 145px;
+    height: 40px;
+    background-color: #4A16D8;
+    color: #FFF;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 1px solid #4A16D8;
+    font-family: 'Almarai', sans-serif;
+    margin-right: 5px;
+}
+
+@media (max-width: 576px){
+    .container-custom-margin {
+        margin: 10px;
+        
+    }
+    .heading {
+        width: 368px;
+        height: 40px;
+        margin-top: 100px;
+        color: #505153;
+        font-weight: 500;
+        font: 'Almarai';
+        max-width: 368px;
+        margin-bottom: 50px;
+    }
+    
+    .heading h1 {
+        font-size: 36px;
+    }
+    
+    .paragraph{
+        width: 339px;
+        height: 54px;
+        color: #505153;
+        font-weight: 500;
+        font: 'Almarai';
+        margin-top: 150px;
+        margin-bottom: 80px;
+    
+    }
+    .paragrapg p {
+        
+        font-size: 16px;
+    }
+    .searchbar{
+        display: none;
+    }
+    
+    
+}
+@media (min-width: 700px){
+    .container-custom-margin {
+        margin: 120px;
+        
+    }
+    .heading {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 400px;
+        
+    }
+    .heading h1 {
+        font-size: 36px;
+        width: 100%;
+        height: 40px;
+        margin-top: -20px;
+        color: #505153;
+        font-weight: 500;
+        font: 'Almarai';
+    }
+    
+    
+    .paragraph{
+        width: 339px;
+        height: 54px;
+        color: #505153;
+        font-weight: 500;
+        font: 'Almarai';
+        margin-top: 70px;
+        margin-bottom: 90px;
+    
+    }
+    .paragrapg p {
+        
+        font-size: 16px;
+    }
+    .searchbar{
+        margin-bottom: 20px;
+        margin-top: -10px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        border: 2px solid rgba(80, 81, 83, 0.3);
+        border-radius: 50px;
+        overflow: hidden;
+        max-width: 350px;
+        height: 39px;
+    }
+    .searchbar button{
+        width: 100px;
+        height: 31px;
+        background-color: #4A16D8;
+        color: #FFF;
+        font-size: 16px;
+        border-radius: 20px;
+        border: 1px solid #4A16D8;
+        font-family: 'Almarai', sans-serif;
+        margin-right: 2px;
+        
+    }
+}
+@media (min-width: 1200px) {
+    .container-custom-margin {
+        margin: 160px;
+        
+    }
+    .heading {
+        width: 657px;
+        height: 54px;
+        margin-top: 100px;
+        margin-bottom: 10PX;
+        
+    }
+    
+    .heading h1 {
+        font-size: 48px;
+        color: #505153;
+        font-weight: 500;
+        font: 'Almarai';
+    }
+    
+    .paragraph{
+        width: 667px;
+        height: 108px;
+        color: #505153;
+        font-weight: 500;
+        font: 'Almarai';
+        margin-top: 40px;
+    
+    }
+    .paragrapg p {
+        
+        font-size: 24px;
+    }
+    .searchbar{
+        margin-bottom: 20px;
+        margin-top: -40PX;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        border: 2px solid rgba(80, 81, 83, 0.3);
+        border-radius: 50px;
+        overflow: hidden;
+        max-width: 524px;
+        height: 57px;
+    }
+    .searchbar button{
+        width: 145px;
+        height: 40px;
+        background-color: #4A16D8;
+        color: #FFF;
+        font-size: 16px;
+        border-radius: 20px;
+        border: 1px solid #4A16D8;
+        font-family: 'Almarai', sans-serif;
+        margin-right: 5px;
+    }
+    
+}

@@ -1,0 +1,12 @@
+.artical-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10%;
+    @media (max-width:720px) {
+        justify-content: center;
+        margin-top: 20%;
+        flex-direction: column;
+          
+        }
+}

@@ -1,0 +1,14 @@
+.containe-custom-margin{
+    margin-left: 160px;
+    margin-right: 160px;
+    margin-top: 10px;
+    margin-bottom: 10PX;
+}
+@media only screen and (max-width: 768px) {
+    .containe-custom-margin {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}

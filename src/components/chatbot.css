@@ -1,0 +1,50 @@
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.chatbot-messages {
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    max-width: 80%;
+    position: relative; /* Ensure position context for absolute positioning */
+}
+
+.user {
+    align-self: flex-end;
+    background-color: #DCF8C6;
+}
+
+.bot {
+    align-self: flex-start;
+    background-color: #E5E5EA;
+}
+
+.delete-message {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #CCCCCC;
+}
+
+.delete-message:hover {
+    color: #FF0000;
+}

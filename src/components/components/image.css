@@ -1,0 +1,35 @@
+.image-grid {
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 99%;
+  border:1px solid black;
+  /* padding-left:10px; */
+
+  @media (max-width:720px) {
+  justify-content: center;
+    
+  }
+  }
+  
+  .image-grid img {
+    width: calc(100% - 10px); 
+    margin: 10px; /* Adjust spacing between images */
+    box-sizing: border-box;
+  }
+  .image-item {
+    /* width: 100%; */
+    padding: 2px; /* Add padding around each image item */
+    
+  }
+  .image-item :hover{
+    transform: scale(1.05);
+  }
+  
+  img {
+    width: 80%; 
+    height: 292px;
+    object-fit: cover; 
+  }
+  

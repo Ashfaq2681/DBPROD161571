@@ -1,0 +1,100 @@
+/* Header.css */
+
+/* Header container */
+.header {
+    margin-bottom: 2px;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    height: 80px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Logo */
+.navlogo {
+    width: 160px;
+    height: 52px;
+    cursor: pointer;
+}
+
+/* Navigation links */
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Discover and Explore buttons */
+.discover, .explore {
+    font-family: 'Almarai';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20.09px;
+    color: #505153;
+}
+
+/* Signup and Login buttons */
+.signup, .login {
+    width: auto;
+    height: 35px;
+    border-radius: 24px;
+    border: 1px solid #505153;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+/* Login button */
+.login {
+    background-color: #FFFFFF;
+    margin-left: 10px;
+}
+
+/* Signup button */
+.signup {
+    background-color: #4A16D8;
+}
+
+/* Button text */
+.btnfont, .btnfont1 {
+    font-family: 'Almarai';
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Signup button text color */
+.btnfont {
+    color: #FFFFFF;
+}
+
+/* Login button text color */
+.btnfont1 {
+    color: #4A16D8;
+}
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 992px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 20px;
+    }
+    .navlogo {
+        margin-bottom: 20px;
+    }
+    .signup, .login {
+        margin-top: 20px;
+    }
+}
