@@ -5,13 +5,13 @@ import Desktop from './components/Desktop';
 import ImageGallery from './components/Images';
 import Footer from './components/Footer';
 // Remove unused imports
-// import Download from './components/Download';
-// import Login from './components/Login';
-// import Signup from './components/Signup';
-// import Blog from './components/Blog';
-// import Hero from './components/1Desktop';
-// import Subscription from './components/subscribe';
-// import Chatbot from './components/chatbot';
+import Download from './components/Download';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import Blog from './components/Blog';
+//import Hero from './components/1Desktop';
+import Subscription from './components/subscribe';
+import Chatbot from './components/chatbot';
 
 const App = () => {
   return (
@@ -19,14 +19,14 @@ const App = () => {
       <Header />
       <Desktop />
       <ImageGallery />
-      {/* Uncomment and use these if needed */}
-      {/* <Download />
+     {/* Uncomment and use these if needed */}
+      <Download />
       <Login />
       <Signup />
-      <Blog /> */}
-      {/* <Subscription/> */}
+      <Blog />
+      <Subscription/>
       <Footer /> 
-      {/* <Hero/> */}
+      {/* <Hero/>
       {/* <Chatbot/> */}
     </div>
   );
