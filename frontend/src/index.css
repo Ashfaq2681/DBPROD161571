@@ -1,0 +1,141 @@
+@font-face {
+    font-family: almarai;
+    src: local('almarai'),
+        url('../src/assets/fonts/Almarai/Almarai-Regular.ttf');
+}
+@font-face {
+    font-family: almarai_light;
+    src: local('almarai_light'),
+        url('../src/assets/fonts/Almarai/Almarai-Light.ttf');
+}
+@font-face {
+    font-family: almarai_bold;
+    src: local('almarai_bold'),
+        url('../src/assets/fonts/Almarai/Almarai-Bold.ttf');
+}
+@font-face {
+    font-family: almarai_extrabold;
+    src: local('almarai_extrabold'),
+        url('../src/assets/fonts/Almarai/Almarai-ExtraBold.ttf');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.inputAuth {
+    @apply w-full lg:max-w-[396px] bg-[#EDEDED] rounded-md p-2 lg:py-3 lg:px-5 focus:outline-none
+}
+
+.inputContact {
+    @apply w-full bg-[#EDEDED] rounded-md p-2 lg:py-3 lg:px-5 focus:outline-none
+}
+
+.nav-btn {
+    @apply px-8 lg:py-1 rounded-full
+}
+
+hr {
+    @apply lg:inline-block w-full text-gray-300 bg-gray-300 mt-5 lg:mt-0 lg:-mb-2
+}
+
+.heading {
+    @apply font-bold text-[36px] lg:text-[40px] text-[#505153] leading-none
+}
+
+.subHeading {
+    @apply font-light text-[18px] lg:text-[20px] text-[#505153] my-6
+}
+
+.heroButtons {
+    @apply px-8 py-1 lg:my-10 xl:my-20 border rounded-full text-[16px] duration-300
+}
+
+.accountSettingButtons {
+  @apply px-8 py-1 my-5 md:my-10 text-[16px]
+}
+
+#submenu {
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+}
+
+#explorediv:hover ul#submenu{
+    opacity: 1;
+    visibility: visible;
+}
+
+.collbutton{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.colldiv:hover .collbutton{
+    opacity: 1;
+    visibility: visible;
+}
+
+.rotate-45 {
+    @apply rotate-[45deg];
+  }
+  
+  .rotate-90 {
+    @apply rotate-[90deg];
+  }
+  
+  .rotate-135 {
+    @apply rotate-[135deg];
+  }
+  
+  .rotate-180 {
+    @apply rotate-[180deg];
+  }
+  
+  .rotate-225 {
+    @apply rotate-[225deg];
+  }
+  
+  .rotate-270 {
+    @apply rotate-[270deg];
+  }
+  
+  .rotate-315 {
+    @apply rotate-[315deg];
+  }
+  
+  .rotate-360 {
+    @apply rotate-[360deg];
+  }
+  
+  .-rotate-45 {
+    @apply rotate-[-45deg];
+  }
+  
+  .-rotate-90 {
+    @apply rotate-[-90deg];
+  }
+  
+  .-rotate-135 {
+    @apply rotate-[-135deg];
+  }
+  
+  .-rotate-180 {
+    @apply rotate-[-180deg];
+  }
+  
+  .-rotate-225 {
+    @apply rotate-[-225deg];
+  }
+  
+  .-rotate-270 {
+    @apply rotate-[-270deg];
+  }
+  
+  .-rotate-315 {
+    @apply rotate-[-315deg];
+  }
+  
+  .-rotate-360 {
+    @apply rotate-[-360deg];
+  }
