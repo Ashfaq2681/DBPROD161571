@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuthContext } from "./CustomHooks/useAuthContext";
 import ScrollToTop from "./Components/ScrollTop";
 import Header from "./Components/Header";
+import PaymentSuccess from "./Components/Payment/paymentSuccess";
 const Brand = lazy(() => import("./Components/Earn/Brand"))
 const Shop = lazy(() => import("./Components/Earn/Shop"))
 const Affiliate = lazy(() => import("./Components/Earn/Affiliate"))
@@ -51,52 +52,53 @@ const App = () => {
         <Header />
         <hr />
         <Suspense>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
                   <Hero />
-                  <ImageGrid/>
-              </>
-            }
-          />
-          <Route path="/login" element={user ? <Navigate to="/"/> : <><ScrollToTop/><Login/></>} />
-          <Route path="/signup" element={user ? <Navigate to="/"/> : <><ScrollToTop/><Signup/></>} />
-          <Route path="/admin" element={!user ? <Navigate to="/"/> : <><ScrollToTop/><Dashboard/></>} />
-          <Route path="/imagedownload" element={<><ScrollToTop/><ImageDownload/></>}/>
-          <Route path="/blog" element={<><ScrollToTop/><Blog/></>}/>
-          <Route path="/blogsinglepage" element={<><ScrollToTop/><BlogSinglePage/></>}/>
-          <Route path="/about" element={<><ScrollToTop/><About/></>}/>
-          <Route path="/pricing" element={<><ScrollToTop/><Pricing/></>}/>
-          <Route path="/coupons" element={<><ScrollToTop/><Coupons/></>}/>
-          <Route path="/contact" element={<><ScrollToTop/><Contact/></>}/>
-          <Route path="/legal" element={<><ScrollToTop/><Legal/></>}/>
-          <Route path="/affiliate" element={<><ScrollToTop/><Affiliate/></>}/>
-          <Route path="/shop" element={<><ScrollToTop/><Shop/></>}/>
-          <Route path="/brand" element={<><ScrollToTop/><Brand/></>}/>
-          <Route path="/enterprise" element={<><ScrollToTop/><Enterprise/></>}/>
-          <Route path="/agency" element={<><ScrollToTop/><Agency/></>}/>
-          <Route path="/investor" element={<><ScrollToTop/><Investor/></>}/>
-          <Route path="/featuredP" element={<><ScrollToTop/><FeaturedP/></>}/>
-          <Route path="/licence" element={<><ScrollToTop/><Licence/></>}/>
-          <Route path="/helpcenter" element={<><ScrollToTop/><HelpCenter/></>}/>
-          <Route path="/psds" element={<><ScrollToTop/><Psds/></>}/>
-          <Route path="/photos" element={<><ScrollToTop/><Photos/></>}/>
-          <Route path="/mockups" element={<><ScrollToTop/><Mockups/></>}/>
-          <Route path="/socialmedia" element={<><ScrollToTop/><SocialMedia/></>}/>
-          <Route path="/vectors" element={<><ScrollToTop/><Vectors/></>}/>
-          <Route path="/stockphotos" element={<><ScrollToTop/><StockPhotos/></>}/>
-          <Route path="/editorial" element={<><ScrollToTop/><Editorial/></>}/>
-          <Route path="/featured" element={<><ScrollToTop/><Featured/></>}/>
-          <Route path="/premium" element={<><ScrollToTop/><Premium/></>}/>
-          <Route path="/trending" element={<><ScrollToTop/><Trending/></>}/>
-          <Route path="/success" element={<><ScrollToTop/><Success/></>}/>
-          <Route path="/cancel" element={<><ScrollToTop/><Cancel/></>}/>
-          <Route path="/searchResult" element={<><ScrollToTop/><SearchResult/></>}/>
-        </Routes>
-        <Footer/>
-        <div className="bottom-0 right-0 px-5 pb-5 z-auto float-end fixed overflow-hidden"><CustomChatBot/></div>
+                  <ImageGrid />
+                </>
+              }
+            />
+            <Route path="/login" element={user ? <Navigate to="/" /> : <><ScrollToTop /><Login /></>} />
+            <Route path="/signup" element={user ? <Navigate to="/" /> : <><ScrollToTop /><Signup /></>} />
+            <Route path="/admin" element={!user ? <Navigate to="/" /> : <><ScrollToTop /><Dashboard /></>} />
+            <Route path="/imagedownload" element={<><ScrollToTop /><ImageDownload /></>} />
+            <Route path="/blog" element={<><ScrollToTop /><Blog /></>} />
+            <Route path="/blogsinglepage" element={<><ScrollToTop /><BlogSinglePage /></>} />
+            <Route path="/about" element={<><ScrollToTop /><About /></>} />
+            <Route path="/pricing" element={<><ScrollToTop /><Pricing /></>} />
+            <Route path="/coupons" element={<><ScrollToTop /><Coupons /></>} />
+            <Route path="/contact" element={<><ScrollToTop /><Contact /></>} />
+            <Route path="/legal" element={<><ScrollToTop /><Legal /></>} />
+            <Route path="/affiliate" element={<><ScrollToTop /><Affiliate /></>} />
+            <Route path="/shop" element={<><ScrollToTop /><Shop /></>} />
+            <Route path="/brand" element={<><ScrollToTop /><Brand /></>} />
+            <Route path="/enterprise" element={<><ScrollToTop /><Enterprise /></>} />
+            <Route path="/agency" element={<><ScrollToTop /><Agency /></>} />
+            <Route path="/investor" element={<><ScrollToTop /><Investor /></>} />
+            <Route path="/featuredP" element={<><ScrollToTop /><FeaturedP /></>} />
+            <Route path="/licence" element={<><ScrollToTop /><Licence /></>} />
+            <Route path="/helpcenter" element={<><ScrollToTop /><HelpCenter /></>} />
+            <Route path="/psds" element={<><ScrollToTop /><Psds /></>} />
+            <Route path="/photos" element={<><ScrollToTop /><Photos /></>} />
+            <Route path="/mockups" element={<><ScrollToTop /><Mockups /></>} />
+            <Route path="/socialmedia" element={<><ScrollToTop /><SocialMedia /></>} />
+            <Route path="/vectors" element={<><ScrollToTop /><Vectors /></>} />
+            <Route path="/stockphotos" element={<><ScrollToTop /><StockPhotos /></>} />
+            <Route path="/editorial" element={<><ScrollToTop /><Editorial /></>} />
+            <Route path="/featured" element={<><ScrollToTop /><Featured /></>} />
+            <Route path="/premium" element={<><ScrollToTop /><Premium /></>} />
+            <Route path="/trending" element={<><ScrollToTop /><Trending /></>} />
+            <Route path="/success" element={<><ScrollToTop /><Success /></>} />
+            <Route path="/cancel" element={<><ScrollToTop /><Cancel /></>} />
+            <Route path="/searchResult" element={<><ScrollToTop /><SearchResult /></>} />
+            <Route path="/paymentsuccess" element={<><ScrollToTop /><PaymentSuccess /></>} />
+          </Routes>
+          <Footer />
+          <div className="bottom-0 right-0 px-5 pb-5 z-auto float-end fixed overflow-hidden"><CustomChatBot /></div>
         </Suspense>
       </BrowserRouter>
     </div>
