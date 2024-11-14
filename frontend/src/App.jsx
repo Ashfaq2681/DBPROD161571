@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuthContext } from "./CustomHooks/useAuthContext";
 import ScrollToTop from "./Components/ScrollTop";
 import Header from "./Components/Header";
-import PaymentSuccess from "./Components/Payment/paymentSuccess";
+import PaymentCompleted from "./Components/paymentSessionPages/PaymentCompleted";
+import CheckoutPage from "./Components/CheckoutPage";
 const Brand = lazy(() => import("./Components/Earn/Brand"))
 const Shop = lazy(() => import("./Components/Earn/Shop"))
 const Affiliate = lazy(() => import("./Components/Earn/Affiliate"))
@@ -95,7 +96,8 @@ const App = () => {
             <Route path="/success" element={<><ScrollToTop /><Success /></>} />
             <Route path="/cancel" element={<><ScrollToTop /><Cancel /></>} />
             <Route path="/searchResult" element={<><ScrollToTop /><SearchResult /></>} />
-            <Route path="/paymentsuccess" element={<><ScrollToTop /><PaymentSuccess /></>} />
+            <Route path="/completed" element={<><ScrollToTop /><PaymentCompleted /></>} />
+            <Route path="/checkout" element={<><ScrollToTop /><CheckoutPage /></>} />
           </Routes>
           <Footer />
           <div className="bottom-0 right-0 px-5 pb-5 z-auto float-end fixed overflow-hidden"><CustomChatBot /></div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
-const PaymentSuccess = () => {
+const PaymentCompleted = () => {
     const navigate = useNavigate();
     const handleBackToHome = () => {
         navigate('/');
@@ -19,4 +19,4 @@ const PaymentSuccess = () => {
         </div>
     )
 }
-export default PaymentSuccess;
+export default PaymentCompleted;

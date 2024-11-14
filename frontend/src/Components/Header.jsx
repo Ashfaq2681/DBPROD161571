@@ -32,7 +32,7 @@ const Header = () => {
             />
           </Link>
           <div className="hidden md:flex flex-row gap-10">
-          <Explore/>
+            <Explore />
             <Link to={`/blog`} className="hidden md:flex text-[#505153]">
               Discover
             </Link>
@@ -62,7 +62,7 @@ const Header = () => {
               <p>{user.name || user.email}</p>
             </div>
             <div className="hidden md:flex">
-              <Suspense><UserPanel user={user} handleClick={handleClick}/></Suspense>
+              <Suspense><UserPanel user={user} handleClick={handleClick} /></Suspense>
             </div>
           </div>
         ) : (
@@ -92,6 +92,9 @@ const Header = () => {
             <Explore />
             <Link to={`/blog`} className=" text-[#505153]">
               Discover
+            </Link>
+            <Link to={`/blog`} className=" text-[#505153]">
+              Blog
             </Link>
             <Link to={`/login`}>
               <button className="px-8 py-1 rounded-full text-[#4A16D8] border border-[#4A16D8]">

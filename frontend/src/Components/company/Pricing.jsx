@@ -1,13 +1,5 @@
 import { useState } from 'react'
 import { Accordian } from '../index'
-import PaymentComponent from '../Payment/paymentComponent'
-
-const productData = {
-  productName: "Premium Icons",
-  price: {
-    annual: 99,
-  },
-};
 
 const Pricing = () => {
 
@@ -185,12 +177,6 @@ const Pricing = () => {
           </div>
         ))}
         <button className='nav-btn bg-[#4A16D8] text-white border border-[#4A16D8] mx-auto font-bold py-1'>Explore more Faqs</button>
-      </div>
-      <div className="flex justify-center bg-[#F5F5F5] py-11">
-        <PaymentComponent
-          productName={productData.productName}
-          price={productData.price}
-        />
       </div>
     </section>
   )
