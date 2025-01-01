@@ -14,5 +14,5 @@ jobs:
       with:
         server: abaidullah@hp.curatedgallery.org
         username: http://ftp.curatedgallery.org
-        password: ${{ FTP_PASSWORD }}
+        password: ${{ secrets.FTP_PASSWORD }}
 
