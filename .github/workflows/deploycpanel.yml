@@ -1,4 +1,4 @@
-- name: FTP Deployer
+  name: FTP Deployer
   uses: sand4rt/ftp-deployer@v1.8
   with:
     sftp: false # optional
