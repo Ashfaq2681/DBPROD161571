@@ -12,7 +12,7 @@ jobs:
     - name:  Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        server: ftp.curatedgallery.org 
-        username: main@blucomtechnologies.com
-        password: ${{ secrets.9AtBDQ0sZQAB }}
+        server: abaidullah@hp.curatedgallery.org
+        username: http://ftp.curatedgallery.org
+        password: ${{ 9AtBDQ0sZQAB }}
 
