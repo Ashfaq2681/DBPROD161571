@@ -1,29 +1,14 @@
-
-  # You may pin to the exact commit or the version.
-  # uses: sand4rt/ftp-deployer@518beaad91d1b18fd55a69321de7ed89080d2ae3
+- name: FTP Deployer
   uses: sand4rt/ftp-deployer@v1.8
   with:
-    # SFTP on
-    sftp: # optional
-    # FTP host URL like: ftp.host.com or sftp.host.com
-    host: http://ftp.curatedgallery.org
-    # FTP port
-    port: # optional, default is 21
-    # Ftp username
-    username: abaidullah@hp.curatedgallery.org 
-    # Ftp password
-    password: ${{ secrets.FTP_PASSWORD }}
-    # The remote folder location of your FTP server
-    remote_folder: # optional
-    # The local folder location
-    local_folder: # optional, default is dist
-    # Remove existing files inside FTP remote folder
-    cleanup: # optional
-    # includes
-    include: # optional
-    # exclude
-    exclude: # optional
-    # passive
-    passive: # optional
-          
-
+    sftp: false # optional
+    host: ${{ secrets.FTP_SERVER }}
+    port: 21 # optional, default is: 21
+    username: ${{ secrets.FTP_USERNAME }} 
+    password: ${{ secrets.FTP_PASSWORD }} 
+    remote_folder: ${{ secrets.FTP_REMOTE_FOLDER }} # optional, remote path of your FTP server
+    local_folder: dist # optional, local path, default is: dist
+    cleanup: false # optional, remove existing files inside FTP remote folder
+    include: '[]' # optional, e.g. '['dist']'
+    exclude: '[]' # optional, e.g. '['node_modules/**', '.git/**', '*.env']'
+    passive: true # optional
