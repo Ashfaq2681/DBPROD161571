@@ -1,0 +1,34 @@
+            - name: FTP Deploy
+  # You may pin to the exact commit or the version.
+  # uses: SamKirkland/FTP-Deploy-Action@8e83cea8672e3fbcbb9fdafff34debf6ae4c5f65
+  uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+  with:
+    # ftp server  
+    server: http://ftp.curatedgallery.org
+    # ftp username
+    username: abaidullah@hp.curatedgallery.org
+    # ftp password
+    password: 9AtBDQ0sZQAB
+    # Server port to connect to (read your web hosts docs)
+    port: # 21
+    # protocol to deploy with - ftp, ftps, or ftps-legacy
+    protocol: # optional
+    # Folder to upload from, must end with trailing slash /
+    local-dir: # optional
+    # Path to upload to on the server. Must end with trailing slash /
+    server-dir: # optional
+    # Path and name of the state file - this file is used to track which files have been deployed
+    state-name: # optional
+    # Prints which modifications will be made with current config options, but doesnt actually make any changes
+    dry-run: # optional
+    # Deletes ALL contents of server-dir, even items in excluded with exclude argument
+    dangerous-clean-slate: # optional
+    # An array of glob patterns, these files will not be included in the publish/delete process
+    exclude: # optional
+    # How verbose should the information be - minimal, standard, or verbose
+    log-level: # optional
+    # strict or loose
+    security: # optional
+    # Timeout in milliseconds for FTP operations
+    timeout: # optional
+          
