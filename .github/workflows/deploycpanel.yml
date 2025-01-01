@@ -1,17 +1,18 @@
+
 on: push
-name: 🚀 Deploy website on push
+name:  Deploy website on push
 jobs:
   web-deploy:
-    name: 🎉 Deploy
+    name:  Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
+    - name:  Get latest code
       uses: actions/checkout@v4
-
-    - name: 📂 Sync files
+    
+    - name:  Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        FTP_SERVER: abaidullah@hp.curatedgallery.org
-        FTP_USERNAME:  http://ftp.curatedgallery.org
-        FTP_PASSWORD: ${{ 9AtBDQ0sZQAB }}
-        dry-run: true
+        server: ftp.curatedgallery.org 
+        username: main@blucomtechnologies.com
+        password: ${{ secrets.9AtBDQ0sZQAB }}
+
