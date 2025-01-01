@@ -12,7 +12,7 @@ jobs:
     - name:  Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        FTP_SERVERNAME: http://ftp.curatedgallery.org
-        FTP_USERNAME: abaidullah@hp.curatedgallery.org 
+        Server: http://ftp.curatedgallery.org
+        Username: abaidullah@hp.curatedgallery.org 
         password: ${{ secrets.FTP_PASSWORD }}
 
