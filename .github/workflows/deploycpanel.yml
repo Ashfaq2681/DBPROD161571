@@ -1,5 +1,4 @@
 
-                    - name: FTP Deployer
   # You may pin to the exact commit or the version.
   # uses: sand4rt/ftp-deployer@518beaad91d1b18fd55a69321de7ed89080d2ae3
   uses: sand4rt/ftp-deployer@v1.8
