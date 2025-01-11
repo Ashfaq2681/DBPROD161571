@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import './App.css';
 import Header from './components/Header';
@@ -31,5 +32,22 @@ const App = () => {
     </div>
   );
 };
+=======
+import React from "react";
+import Header from "./header";
+import Content from "./content";
+import Footer from "./footer";
+import Home from "./home";
+function App() {
+  return (
+    <>
+      {/* <Header />
+      <Content />
+      <Footer /> */}
+      <Home />
+    </>
+  );
+}
+>>>>>>> 1779cb4 (changes to be commited)
 
 export default App;
