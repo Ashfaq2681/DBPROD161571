@@ -1,8 +1,0 @@
-  name: FTP Deployer
-  uses: sand4rt/ftp-deployer@v1.8
-  with:
-    host: ${{ secrets.FTP_SERVER }}
-    port: 21 # optional, default is: 21
-    username: ${{ secrets.FTP_USERNAME }} 
-    password: ${{ secrets.FTP_PASSWORD }} 
-    remote_folder: ${{ secrets.FTP_REMOTE_FOLDER }
