@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./header";
 import Footer from "./footer";
-import vector from "./assets/vector.png";
+import vector from "@src/assets/icons/vector4";
 export default function Payments5() {
   return (
     <div>
