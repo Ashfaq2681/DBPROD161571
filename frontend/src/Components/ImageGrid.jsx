@@ -20,7 +20,6 @@ const ImageGrid = () => {
     const getImage = async () => {
       const result = await axios.get(`${baseUrl}/user/getimages`);
       if (result) setImages(result.data.data);
-      console.log("Images:", result.data.data);
     };
     getImage();
   }, []);
@@ -67,7 +66,6 @@ const ImageGrid = () => {
         {images == null
           ? ""
           : images.map((data, index) => {
-            console.log(`http://localhost:4000/uploads/images/` + data.photos[0])
               return (
                 <Link to={`/imagedownload`} className="grow" state={{ data }} key={index}>
                   <img
