@@ -2,12 +2,14 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
-import { zip1 } from "../assets";
+// import { zip1 } from "../assets";
 
 const ImageDownload = () => {
   const location = useLocation();
   const [isActive, setIsActive] = useState(false);
-  const i = location.state.i;
+  const i = location.state.data.photos[0];
+
+  console.log(location.state.data.photos[0]);
 
   const toggleLike = () => {
     setIsActive(!isActive);
@@ -25,13 +27,30 @@ const ImageDownload = () => {
     const fileResponse = await fetch(`http://localhost:4000/uploads/images/${i.file}`);
     const fileBlob = await fileResponse.blob();
     zip.file(i.file, fileBlob); // Adds the file (PSD)
-  // Remove the file extension (e.g., .png, .jpg, etc.) from i.preview for the zip filename
-  const zipFileName = i.preview.split('.').slice(0, -1).join('.');
+    // Remove the file extension (e.g., .png, .jpg, etc.) from i.preview for the zip filename
+    const zipFileName = i.preview.split('.').slice(0, -1).join('.');
 
-  // Generate zip and trigger download
-  zip.generateAsync({ type: "blob" }).then((content) => {
+    // Generate zip and trigger download
+    zip.generateAsync({ type: "blob" }).then((content) => {
     saveAs(content, `${zipFileName}.zip`);
     });
+  };
+
+  const handleDownload = async () => {
+    try {
+      const response = await fetch(`http://localhost:4000/uploads/images/${i}`);
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = i;
+      a.click();
+
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error("Download failed:", err);
+    }
   };
 
   return (
@@ -58,9 +77,10 @@ const ImageDownload = () => {
           </button>
         </div>
         <div className="flex flex-col gap-10 justify-start lg:items-center md:max-w-[860px]">
+          {console.log(`http://localhost:4000/uploads/images/${i.split("/").pop()}`)}
           <img
             loading="lazy"
-            src={`http://localhost:4000/uploads/images/${i.preview}`}
+            src={`http://localhost:4000/uploads/images/${i.split("/").pop()}`}
             alt={i.file}
             className="h-auto lg:h-[600px]"
           />
@@ -79,14 +99,14 @@ const ImageDownload = () => {
                 Photoshop Layered
               </div>
             </div>
-            <button onClick={handleDownloadZip} className="rounded-full py-2 px-5 my-10 lg:my-0 bg-[#4A16D8] font-semibold text-[20px] text-white border-2 border-[#4A16D8] max-w-[200px] flex flex-row gap-2">
+            <button onClick={handleDownload} className="rounded-full py-2 px-5 my-10 lg:my-0 bg-[#4A16D8] font-semibold text-[20px] text-white border-2 border-[#4A16D8] max-w-[200px] flex flex-row gap-2">
               <img loading="lazy" src="./imageDownload/arrowdown.png" alt="arrowdown" />
               Download
             </button>
           </div>
         </div>
         <p className="hidden lg:inline-block text-[10px] text-start font-light max-w-[730px] mt-8 mb-20">
-          BeautifulPremium images aren't included in image subscriptions, FLEX subscriptions, or on-demand packs. You
+          BeautifulPremium images aren&apos;t included in image subscriptions, FLEX subscriptions, or on-demand packs. You
           can license and pay for them separately Model Posing at the Sunlight, City Background with Gray Clothes
         </p>
       </div>

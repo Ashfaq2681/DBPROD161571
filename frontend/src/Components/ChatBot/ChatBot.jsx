@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { Link, redirect } from "react-router-dom";
 import ChatBot from "react-chatbotify";
+import { baseUrl } from "../../constants/strings";
 
 const CustomChatBot = () => {
     const [open, setOpen] = useState(false)
     const [searchResult, setSearchResult] = useState([])
 
     const fetchImages = (value) => {
-      fetch("http://localhost:4000/api/user/getimage")
+      fetch(`${baseUrl}/user/getimage`)
         .then((response) => response.json())
         .then((json) => {
           const result = json.data;

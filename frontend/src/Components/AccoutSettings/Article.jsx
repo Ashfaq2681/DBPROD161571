@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { baseUrl } from "../../constants/strings";
 
 const PublishArticle = () => {
   // State for form inputs
@@ -79,7 +80,7 @@ const PublishArticle = () => {
 
     try {
       await axios.post(
-        "http://localhost:4000/api/user/uploadarticle",
+        `${baseUrl}/user/uploadarticle`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );

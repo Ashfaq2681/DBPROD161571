@@ -10,7 +10,7 @@ const storageHome = multer.diskStorage({
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now();
-    cb(null, uniqueSuffix + file.originalname);
+    cb(null, uniqueSuffix + file.originalname.replace(" ", "-"));
   },
 });
 const uploadHome = multer({ storage: storageHome });
@@ -82,7 +82,7 @@ router.post(
           if (!files.file) {
             return res.status(400).json({ message: "File for photos is missing" });
           }
-          imageDetails.photos = [files.file[0].filename];
+          imageDetails.photos = [files.file[0].filename.replace(" ", "-")];
           break;
 
         case 'psds':
@@ -95,8 +95,8 @@ router.post(
           }
           imageDetails[category] = [
             {
-              preview: files.preview[0].filename,  // Preview image
-              file: files.file[0].filename         // Actual file
+              preview: files.preview[0].filename.replace(" ", "-"),  // Preview image
+              file: files.file[0].filename.replace(" ", "-")         // Actual file
             }
           ];
           break;
@@ -136,27 +136,27 @@ router.get("/getpsds", async (req, res) => {
 });
 
 // // Get images route
-// router.get("/getimages", async (req, res) => {
-//   try {
-//     // Fetch all images from the 'images' collection in MongoDB
-//     const allImages = await images.find({});
+router.get("/getimages", async (req, res) => {
+  try {
+    // Fetch all images from the 'images' collection in MongoDB
+    const allImages = await images.find({});
     
-//     // Check if images exist
-//     if (!allImages || allImages.length === 0) {
-//       return res.status(404).json({ message: "No images found" });
-//     }
+    // Check if images exist
+    if (!allImages || allImages.length === 0) {
+      return res.status(404).json({ message: "No images found" });
+    }
 
-//     // Send the image data as a JSON response
-//     res.status(200).json({
-//       status: "ok",
-//       data: allImages,
-//     });
-//   } catch (error) {
-//     // Handle any errors that occur during the process
-//     res.status(500).json({ message: "Failed to retrieve images", error });
-//     console.log(error);
-//   }
-// });
+    // Send the image data as a JSON response
+    res.status(200).json({
+      status: "ok",
+      data: allImages,
+    });
+  } catch (error) {
+    // Handle any errors that occur during the process
+    res.status(500).json({ message: "Failed to retrieve images", error });
+    console.log(error);
+  }
+});
 
 
 
@@ -254,19 +254,6 @@ router.post("/uploadimage/user", uploadUser.any("file"), async (req, res) => {
     console.log(error);
   }
 });
-
-//home image retrieval route
-// router.get("/getimage", async (req, res) => {
-//   try {
-//     images.find({}).then((data) => {
-//       res.send({ status: "ok", data: data });
-//     });
-//   } catch (error) {
-//     res.status(404);
-//     console.log(error);
-//   }
-// });
-
 
 // Delete article route
 router.delete("/deletearticle/:id", async (req, res) => {

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { psdsList } from "../../../public/psds";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { baseUrl } from "../../constants/strings";
 
 const Psds = () => {
   const [psds, setPsds] = useState([]);
@@ -13,7 +14,7 @@ const Psds = () => {
     const fetchImages = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/user/getpsds"
+          `${baseUrl}/user/getpsds`
         );
         setPsds(response.data.data);
         setLoading(false);

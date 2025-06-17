@@ -25,7 +25,7 @@ mongoose
   .then(() => {
     //port
     app.listen(process.env.PORT, () => {
-      console.log("Db connected and On port", process.env.PORT);
+      console.log(`Listening on http://localhost:${process.env.PORT}/`);
     });
   })
   .catch((error) => {

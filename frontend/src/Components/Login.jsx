@@ -24,7 +24,7 @@ const Login = () => {
         <form className="my-6 space-y-3" action="POST">
           <input
             type="email"
-            placeholder="Login"
+            placeholder="Email"
             name="login"
             value={email}
             onChange={(e) => setEmail(e.target.value)}

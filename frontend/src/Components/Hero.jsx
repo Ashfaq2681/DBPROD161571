@@ -2,6 +2,7 @@ import { memo, useState } from "react";
 import { Link } from "react-router-dom";
 import { GoSearch } from "react-icons/go";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import { baseUrl } from "../constants/strings";
 const categories = [
   "Psds",
   "Photos",
@@ -19,7 +20,7 @@ const Hero = () => {
   const [filterType, setFilterType] = useState("");
 
   const fetchData = (value) => {
-    fetch("http://localhost:4000/api/user/getimage")
+    fetch(`${baseUrl}/user/getimage`)
       .then((response) => response.json())
       .then((json) => {
         const result = json.data;

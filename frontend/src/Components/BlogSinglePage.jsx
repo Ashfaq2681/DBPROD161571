@@ -4,6 +4,7 @@ import { blogCardItems } from ".";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { baseUrl } from "../constants/strings";
 
 const BlogSinglePage = () => {
   const bloglocation = useLocation();
@@ -15,7 +16,7 @@ const BlogSinglePage = () => {
     const getArticles = async () => {
       try {
         const result = await axios.get(
-          "http://localhost:4000/api/user/getarticles"
+          `${baseUrl}/user/getarticles`
         );
         if (result && result.data.data) {
           // Update the blogCardItems state with the article details

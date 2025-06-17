@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useAuthContext } from "./useAuthContext";
 import {loadStripe} from '@stripe/stripe-js';
+import { baseUrl } from "../constants/strings";
 
 export const usePlan = () => {
   const { dispatch } = useAuthContext();
@@ -14,7 +15,7 @@ export const usePlan = () => {
     const stripe = await loadStripe('pk_test_51PRW2aGJyOdTC98YnoQJCsrBfUdajxs1kcqbCFV8nOOHr2UadrrUdGD2GrmCBmaZSiRcfFfhdaJyr8pc6BtX1Rkc00XX4oI78s');
 
     try {
-      const response = await axios.post("http://localhost:4000/api/user/create-checkout-session", selectedPlan, {
+      const response = await axios.post(`${baseUrl}/user/create-checkout-session`, selectedPlan, {
         headers: { "Content-Type": "application/json" },
       })
       const session = await response.data

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { baseUrl } from '../../constants/strings';
 
 const ImageGallery = () => {
   // State to hold the fetched images
@@ -12,7 +13,7 @@ const ImageGallery = () => {
     const fetchImages = async () => {
       try {
         // Make a GET request to fetch images
-        const response = await axios.get("http://localhost:4000/api/user/getimages"); // Update with your correct endpoint
+        const response = await axios.get(`${baseUrl}/user/getimages`); // Update with your correct endpoint
         setImages(response.data.data);  // Assuming the response contains the image data
         setLoading(false);  // Set loading to false after images are fetched
       } catch (err) {

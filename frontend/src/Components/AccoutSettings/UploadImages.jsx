@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { baseUrl } from "../../constants/strings";
 
 const UploadForm = () => {
   const [category, setCategory] = useState("photos");
@@ -42,7 +43,7 @@ const UploadForm = () => {
   
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/user/uploadimage/home",
+        `${baseUrl}/user/uploadimage/home`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },

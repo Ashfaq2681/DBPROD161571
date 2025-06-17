@@ -26,7 +26,7 @@ const SearchResult = () => {
                 <div className="grow" key={data.image}>
                   <img
                     loading="lazy"
-                    src={`http://localhost:4000/images/` + data.image}
+                    src={`http://localhost:4000/uploads/images/` + data.image}
                     key={data._id}
                     alt="image"
                     className="object-cover w-full h-[292px]"

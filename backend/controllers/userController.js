@@ -23,7 +23,7 @@ const loginUser = async (req, res) => {
     }
 }
 
-//signup user
+//signup usertime
 const signupUser = async (req, res) => {
     const { email, password } = req.body
 
@@ -33,7 +33,10 @@ const signupUser = async (req, res) => {
         //create token
         const token = createToken(user._id)
 
-        res.status(200).json({email, token})
+        res.status(201).json({
+            user: user,
+            token
+        })
 
     } catch (error) {
         res.status(400).json({ error: error.message })

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { HeroButtons } from ".";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { baseUrl } from "../constants/strings";
 //  blogCardItems
 
 const Blog = () => {
@@ -13,7 +14,7 @@ const Blog = () => {
     const getArticles = async () => {
       try {
         const result = await axios.get(
-          "http://localhost:4000/api/user/getarticles"
+          `${baseUrl}/user/getarticles`
         );
         if (result && result.data.data) {
           // Update the blogCardItems state with the article details
@@ -28,7 +29,7 @@ const Blog = () => {
 
   useEffect(() => {
     const getImage = async () => {
-      const result = await axios.get("http://localhost:4000/api/user/getimage");
+      const result = await axios.get(`${baseUrl}/user/getimage`);
       if (result) {
         const result_images = result.data.data;
         for (let i = 0; i < result_images.length; i++) {
