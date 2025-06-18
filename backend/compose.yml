@@ -4,7 +4,11 @@ services:
   backend:
     build: .
     ports:
-      - 80:${PORT}
+      - 80:80
+      - 443:443
     environment:
       MONGO_URI: "${MONGO_URL}"
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+    restart: always
 
