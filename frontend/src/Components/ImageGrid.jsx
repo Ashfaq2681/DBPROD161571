@@ -3,7 +3,7 @@ import { photoList } from "../../public/grid";
 import { HeroButtons } from ".";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { baseUrl } from "../constants/strings";
+import { baseUploadsUrl, baseUrl } from "../constants/strings";
 
 const ImageGrid = () => {
   const psdsList = [{}];
@@ -70,7 +70,7 @@ const ImageGrid = () => {
                 <Link to={`/imagedownload`} className="grow" state={{ data }} key={index}>
                   <img
                     loading="lazy"
-                    src={`http://localhost:4000/uploads/images/` + data.photos[0]}
+                    src={`${baseUploadsUrl}/images/` + data.photos[0]}
                     key={data._id}
                     alt="image"
                     className="object-cover w-full h-[292px]"

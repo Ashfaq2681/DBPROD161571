@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
+import { baseUploadsUrl } from "../constants/strings";
 // import { zip1 } from "../assets";
 
 const ImageDownload = () => {
@@ -19,12 +20,12 @@ const ImageDownload = () => {
     const zip = new JSZip();
 
     // Fetch the preview image and add it to the zip
-    const previewResponse = await fetch(`http://localhost:4000/uploads/images/${i.preview}`);
+    const previewResponse = await fetch(`${baseUploadsUrl}/images/${i.preview}`);
     const previewBlob = await previewResponse.blob();
     zip.file(i.preview, previewBlob); // Adds preview image
 
     // Fetch the file (psd) and add it to the zip
-    const fileResponse = await fetch(`http://localhost:4000/uploads/images/${i.file}`);
+    const fileResponse = await fetch(`${baseUploadsUrl}/images/${i.file}`);
     const fileBlob = await fileResponse.blob();
     zip.file(i.file, fileBlob); // Adds the file (PSD)
     // Remove the file extension (e.g., .png, .jpg, etc.) from i.preview for the zip filename
@@ -38,7 +39,7 @@ const ImageDownload = () => {
 
   const handleDownload = async () => {
     try {
-      const response = await fetch(`http://localhost:4000/uploads/images/${i}`);
+      const response = await fetch(`${baseUploadsUrl}/images/${i}`);
       const blob = await response.blob();
       const url = URL.createObjectURL(blob);
 
@@ -77,10 +78,10 @@ const ImageDownload = () => {
           </button>
         </div>
         <div className="flex flex-col gap-10 justify-start lg:items-center md:max-w-[860px]">
-          {console.log(`http://localhost:4000/uploads/images/${i.split("/").pop()}`)}
+          {console.log(`${baseUploadsUrl}/images/${i.split("/").pop()}`)}
           <img
             loading="lazy"
-            src={`http://localhost:4000/uploads/images/${i.split("/").pop()}`}
+            src={`${baseUploadsUrl}/images/${i.split("/").pop()}`}
             alt={i.file}
             className="h-auto lg:h-[600px]"
           />

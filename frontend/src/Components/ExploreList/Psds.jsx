@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { psdsList } from "../../../public/psds";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { baseUrl } from "../../constants/strings";
+import { baseUploadsUrl, baseUrl } from "../../constants/strings";
 
 const Psds = () => {
   const [psds, setPsds] = useState([]);
@@ -70,7 +70,7 @@ const Psds = () => {
             >
               <img
                 loading="lazy"
-                src={`http://localhost:4000/uploads/images/${i.preview}`}
+                src={`${baseUploadsUrl}/images/${i.preview}`}
                 alt={i}
                 className="object-cover w-full h-[292px]"
               />

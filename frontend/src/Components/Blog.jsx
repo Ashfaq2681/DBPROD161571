@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { HeroButtons } from ".";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { baseUrl } from "../constants/strings";
+import { baseUploadsUrl, baseUrl } from "../constants/strings";
 //  blogCardItems
 
 const Blog = () => {
@@ -55,7 +55,7 @@ const Blog = () => {
             <h1>{item.title}</h1>
             <p>{item.description}</p>
             <img
-         src={`http://localhost:4000/uploads/articleImages/${item.image}`}
+         src={`${baseUploadsUrl}/articleImages/${item.image}`}
         alt={item.title}
         className="w-full h-48 object-cover"
       />
@@ -92,7 +92,7 @@ const Blog = () => {
           <div key={i.id} className="lg:w-[670px] bg-white">
             <img
               loading="lazy"
-              src={`http://localhost:4000/uploads/articleImages/${i.descriptionImage}`}
+              src={`${baseUploadsUrl}/articleImages/${i.descriptionImage}`}
               alt={i}
               className="w-full object-cover h-[240px] md:h-[350px]"
             />
@@ -113,7 +113,7 @@ const Blog = () => {
           >
             <img
               loading="lazy"
-              src={`http://localhost:4000/uploads/articleImages/${i.descriptionImage}`}
+              src={`${baseUploadsUrl}/articleImages/${i.descriptionImage}`}
               alt={i}
               className="w-full object-cover h-[240px] md:h-[282px]"
             />
@@ -144,7 +144,7 @@ const Blog = () => {
           >
             <img
               loading="lazy"
-              src={`http://localhost:4000/uploads/articleImages/${i.descriptionImage}`}
+              src={`${baseUploadsUrl}/articleImages/${i.descriptionImage}`}
               alt={i}
               className="w-full object-cover h-[240px] md:h-[282px]"
             />

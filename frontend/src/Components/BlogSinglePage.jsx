@@ -1,10 +1,10 @@
 import BlogCard from "./BlogCard";
 import { useLocation } from "react-router-dom";
-import { blogCardItems } from ".";
+// import { blogCardItems } from ".";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { baseUrl } from "../constants/strings";
+import { baseUploadsUrl, baseUrl } from "../constants/strings";
 
 const BlogSinglePage = () => {
   const bloglocation = useLocation();
@@ -45,7 +45,7 @@ const BlogSinglePage = () => {
       <div className="flex flex-row justify-center items-center">
         <img
           loading="lazy"
-          src={`http://localhost:4000/uploads/articleImages/${blogItem.descriptionImage}`}
+          src={`${baseUploadsUrl}/articleImages/${blogItem.descriptionImage}`}
           alt="image35"
           className="min-w-[362px] max-w-[1350px] min-h-[388px] max-h-[550px] object-cover bg-white"
         />
@@ -75,7 +75,7 @@ const BlogSinglePage = () => {
         </p>
         {blogItem.description1Image && <img
           // src="./blogSinglePage/image 27.png"
-          src={`http://localhost:4000/uploads/articleImages/${blogItem.description1Image}`}
+          src={`${baseUploadsUrl}/articleImages/${blogItem.description1Image}`}
           alt="image1"
           className="w-[366px] lg:w-[500px] xl:w-[600px] h-[552px] lg:h-[450px] xl:h-[400px] object-cover"
         />}
@@ -83,7 +83,7 @@ const BlogSinglePage = () => {
       </div>
       <div className="flex flex-col lg:flex-row gap-10 my-40">
         <BlogCard
-          src={blogItem.description3_1Image? (`http://localhost:4000/uploads/articleImages/${blogItem.description3_2Image}`):""}
+          src={blogItem.description3_1Image? (`${baseUploadsUrl}/articleImages/${blogItem.description3_2Image}`):""}
           // src="./blogSinglePage/image 27.png"
           number="1"
           title={blogItem.heading3_1}
@@ -92,7 +92,7 @@ const BlogSinglePage = () => {
 
         <BlogCard
           // src="./blogSinglePage/image 33.png"
-          src={blogItem.description3_1Image? (`http://localhost:4000/uploads/articleImages/${blogItem.description3_2Image}`):""}
+          src={blogItem.description3_1Image? (`${baseUploadsUrl}/articleImages/${blogItem.description3_2Image}`):""}
           number="2"
           title={blogItem.heading3_2}
           subtitle={blogItem.description3_2}
@@ -100,7 +100,7 @@ const BlogSinglePage = () => {
 
         <BlogCard
           // src="./blogSinglePage/image 34.png"
-          src={blogItem.description3_1Image? (`http://localhost:4000/uploads/articleImages/${blogItem.description3_2Image}`):""}
+          src={blogItem.description3_1Image? (`${baseUploadsUrl}/articleImages/${blogItem.description3_2Image}`):""}
           number="3"
           title={blogItem.heading3_3}
           subtitle={blogItem.description3_3}
@@ -129,7 +129,7 @@ const BlogSinglePage = () => {
             >
               <img
                 loading="lazy"
-                src={`http://localhost:4000/uploads/articleImages/${i.descriptionImage}`}
+                src={`${baseUploadsUrl}/articleImages/${i.descriptionImage}`}
                 alt={i}
                 className="w-full object-cover h-[200px] md:h-[242px]"
               />

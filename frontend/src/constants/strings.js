@@ -1,1 +1,4 @@
-export const baseUrl = "http://localhost:4000/api";
+const base = "http://api.curatedgallery.org";
+
+export const baseUrl = `${base}/api`;
+export const baseUploadsUrl = `${base}/uploads`;

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { baseUploadsUrl } from "../constants/strings";
 
 const SearchResult = () => {
   const [imagesArray, setImagesArray] = useState([]);
@@ -26,7 +27,7 @@ const SearchResult = () => {
                 <div className="grow" key={data.image}>
                   <img
                     loading="lazy"
-                    src={`http://localhost:4000/uploads/images/` + data.image}
+                    src={`${baseUploadsUrl}/images/` + data.image}
                     key={data._id}
                     alt="image"
                     className="object-cover w-full h-[292px]"
