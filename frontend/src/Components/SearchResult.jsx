@@ -21,14 +21,15 @@ const SearchResult = () => {
       <p className="subHeading">Search has found {imagesArray.length} results</p>
       <div className="gap-5 space-y-5 columns-2 sm:columns-3 md:columns-4 lg:columns-5 xl:columns-6 w-full mx-auto">
         {images.state.searchResult == null
-          ? ""
-          : images.state.searchResult.map((data) => {
+          ? <div>No data</div>
+          : images.state.searchResult.map((data, index) => {
+            console.log(data)
               return (
-                <div className="grow" key={data.image}>
+                <div className="grow" key={data["photos"]}>
                   <img
                     loading="lazy"
-                    src={`${baseUploadsUrl}/images/` + data.image}
-                    key={data._id}
+                    src={`${baseUploadsUrl}/images/` + data["photos"]}
+                    key={index}
                     alt="image"
                     className="object-cover w-full h-[292px]"
                   />

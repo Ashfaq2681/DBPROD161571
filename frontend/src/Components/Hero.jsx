@@ -1,5 +1,5 @@
 import { memo, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { GoSearch } from "react-icons/go";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { baseUrl } from "../constants/strings";
@@ -18,34 +18,37 @@ const Hero = () => {
   const [searchDropDown, setSearchDropDown] = useState(false);
   const [searchPlaceholder, setSearchPlaceholder] = useState("Search Image...");
   const [filterType, setFilterType] = useState("");
+  const navigate = useNavigate();
 
   const fetchData = (value) => {
-    fetch(`${baseUrl}/user/getimage`)
+    fetch(`${baseUrl}/user/search?keyword=${input}`)
       .then((response) => response.json())
       .then((json) => {
         const result = json.data;
-        console.log(result);
-        const resultArray = result.filter((data) => {
-          return (
-            value &&
-            data.image &&
-            data.image &&
-            data.image.toLowerCase().includes(value)
-          );
-        });
-        setSearchResult(resultArray)
+        console.log("Result: " + result);
+        // const resultArray = result.filter((data) => {
+        //   return (
+        //     value &&
+        //     data.image &&
+        //     data.image &&
+        //     data.image.toLowerCase().includes(value)
+        //   );
+        // });
+        // setSearchResult(result);
+        navigate("/searchResult", { state: { searchResult: result } });
       });
   };
 
   const handleChange = (value) => {
     setInput(value);
-    fetchData(value);
     setSearchError(false)
   };
 
-  const handleSearch = () => {
+  const handleSearch = async () => {
     if (input === "") setSearchError(true)
+    fetchData(input);
   }
+
   const handleCategoryDropDown = () => {
     setSearchDropDown(!searchDropDown);
   };
@@ -161,9 +164,9 @@ const Hero = () => {
                <GoSearch />
               </button>}
               {input !== "" && 
-              <Link to={`/searchResult`} className="hover:opacity-80 text-xl text-gray-500 font-semibold rounded-full p-1" state={{ searchResult }} key={searchResult}>
-                <GoSearch />
-              </Link>}
+              <button type="button" onClick={handleSearch} className="hover:opacity-80 text-xl text-gray-500 font-semibold rounded-full p-1">
+               <GoSearch />
+              </button>}
               </div>
             </form>
           </div>
