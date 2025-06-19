@@ -25,7 +25,8 @@ const imageSchema = new Schema(
         vectors: { type: [fileSchema] }, 
         pngs: { type: [fileSchema] }, 
         socialMedia: { type: [fileSchema] },
-        category: { type: String, required: true }
+        category: { type: String, required: true },
+        title: { type: String, required: true }
     },
     {
         collection: "ImageDetails",
