@@ -4,6 +4,7 @@ import { baseUrl } from "../../constants/strings";
 
 const UploadForm = () => {
   const [category, setCategory] = useState("photos");
+  const [title, setTitle] = useState(null);
   const [files, setFiles] = useState({
     preview: null,
     categoryFile: null,
@@ -15,6 +16,10 @@ const UploadForm = () => {
     setCategory(e.target.value);
     setFiles({ preview: null, categoryFile: null });
     setPreviewURL(""); // Clear preview when category changes
+  };
+
+  const handleTitleChange = (e) => {
+    setTitle(e.target.value);
   };
 
   const handleFileChange = (e) => {
@@ -33,6 +38,7 @@ const UploadForm = () => {
   
     const formData = new FormData();
     formData.append("category", category);
+    formData.append("title", title);
   
     if (category !== "photos") {
       formData.append("preview", files.preview);
@@ -90,6 +96,20 @@ const UploadForm = () => {
             <option value="pngs">PNGs</option>
             <option value="socialMedia">Social Media</option>
           </select>
+        </div>
+
+        {/* Image Title */}
+        <div>
+          <label className="block text-sm md:text-lg font-semibold text-gray-600 mb-1">
+            Title
+          </label>
+          <input
+            name="img-title"
+            onChange={handleTitleChange}
+            className="block w-full text-sm border border-gray-300 rounded px-3 py-2"
+            placeholder="Mountains"
+            required
+          />
         </div>
 
         {/* File Upload */}

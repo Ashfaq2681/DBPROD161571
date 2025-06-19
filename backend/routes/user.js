@@ -105,6 +105,8 @@ router.post(
           return res.status(400).json({ message: "Invalid category" });
       }
 
+      imageDetails["title"] = req.body.title;
+
       // Save to the database
       await images.create(imageDetails);
       res.status(200).json({ message: "File uploaded successfully" });
@@ -267,6 +269,31 @@ router.delete("/deletearticle/:id", async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: "Failed to delete article" });
     console.log(error);
+  }
+});
+
+// generic search
+router.get("/search", async (req, res) => {
+  const { keyword } = req.query;
+
+  try {
+    const regex = new RegExp(keyword, "i"); // case-insensitive
+
+    const imagesList = await images.find({
+      $or: [
+        { photos: { $elemMatch: { $regex: regex } } },
+        { "psds.fileName": regex },
+        { "mockups.fileName": regex },
+        { "vectors.fileName": regex },
+        { "pngs.fileName": regex },
+        { "socialMedia.fileName": regex }
+      ]
+    });
+
+    res.status(200).json({ status: "ok", data: imagesList });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Search failed" });
   }
 });
 

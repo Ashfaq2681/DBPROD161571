@@ -26,7 +26,7 @@ const Header = () => {
           <Link to={`/`}>
             <img
               loading="lazy"
-              src="./header/Logo-primary.svg"
+              src="/header/Logo-primary.svg"
               alt="primaryLogo"
               className="h-[31px] w-[170px] md:h-[31px] md:w-[146px]"
             />
