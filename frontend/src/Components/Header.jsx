@@ -1,4 +1,4 @@
-import { useState, lazy, Suspense, memo } from "react";
+import { useState, Suspense, memo } from "react";
 
 import Explore from "./Explore"
 import { Link } from "react-router-dom";
