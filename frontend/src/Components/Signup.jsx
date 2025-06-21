@@ -8,10 +8,11 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [retypePass, setRetypePass] = useState("");
-  const [check, setCheck] = useState(false)
-  const [passError, setpassError] = useState(false)
-  const [checkError, setCheckError] = useState("")
-  const { signup, googleSignup, error, isLoading } = useSignup()
+  const [check, setCheck] = useState(false);
+  const [checkDesigner, setCheckDesigner] = useState(false);
+  const [passError, setpassError] = useState(false);
+  const [checkError, setCheckError] = useState("");
+  const { signup, googleSignup, error, isLoading } = useSignup();
   
   const handleSubmit = async(e) => {
     e.preventDefault()
@@ -20,13 +21,11 @@ const Signup = () => {
     // } else if (!check) {
     //   setCheckError("Please accept out terms and conditions")
     } else {
-      await signup(email, password).then(()=>{
+      await signup(email, password, checkDesigner).then(()=>{
         setpassError(false)
         setCheck(false)
+        setCheckDesigner(false)
         setCheckError("")
-        // setEmail("")
-        // setPassword("")
-        // setRetypePass("")
       })
      
     }
@@ -66,28 +65,43 @@ const Signup = () => {
             onChange={(e) => setRetypePass(e.target.value)}
             className="inputAuth"
           />
-          {passError && <p className="text-red-500 text-[18px]">Passwords don't match</p>}
+          {passError && <p className="text-red-500 text-[18px]">Passwords don&apos;t match</p>}
         </form>
-        <form className="flex flex-row gap-2 mx-2 mt-6 items-center justify-center">
-          <input
-            type="checkbox"
-            name="terms"
-            id="terms"
-            className="w-5 h-5"
-            value={check}
-            onClick={() => setCheck(!check)}
-          />
-          <label htmlFor="terms" className="text-[13px] text-start leading-4">
-            By signing the account. you accept our{" "}
-            <a href="#" className="text-[#4A16D8] hover:underline">
-              Terms & Conditions
-            </a>{" "}
-            and{" "}
-            <a href="#" className="text-[#4A16D8] hover:underline">
-              Privacy Policy
-            </a>
-          </label>
-        </form>
+        <div>
+          <form className="flex flex-row gap-2 mx-2 mt-6 items-center w-full">
+            <input
+              type="checkbox"
+              name="isDesigner"
+              id="isDesigner"
+              className="w-5 h-5"
+              value={checkDesigner}
+              onClick={() => setCheckDesigner(!checkDesigner)}
+            />
+            <label htmlFor="isDesigner" className="text-[13px] text-start leading-4">
+              I am a Designer
+            </label>
+          </form>
+          <form className="flex flex-row gap-2 mx-2 mt-6 items-center justify-center">
+            <input
+              type="checkbox"
+              name="terms"
+              id="terms"
+              className="w-5 h-5"
+              value={check}
+              onClick={() => setCheck(!check)}
+            />
+            <label htmlFor="terms" className="text-[13px] text-start leading-4">
+              By signing the account. you accept our{" "}
+              <a href="#" className="text-[#4A16D8] hover:underline">
+                Terms & Conditions
+              </a>{" "}
+              and{" "}
+              <a href="#" className="text-[#4A16D8] hover:underline">
+                Privacy Policy
+              </a>
+            </label>
+          </form>
+        </div>
         <p className="text-red-500 text-[18px]">{checkError}</p>
         <button
           disabled={isLoading}

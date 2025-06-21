@@ -5,6 +5,8 @@ import Product from "./AccoutSettings/Product";
 import Article from "./AccoutSettings/Article";
 import UploadImages from "./AccoutSettings/UploadImages";
 import UploadForm from "./AccoutSettings/Test";
+import Customers from "./Customers";
+import Designers from "./Designers";
 
 const Dashboard = () => {
   const { user, plan } = useAuthContext();
@@ -58,7 +60,7 @@ const Dashboard = () => {
           </p>
         </div>
         <div
-          className={`flex flex-row justify-start items-center gap-2 py-2 w-full mt-2 mb-16 cursor-pointer ${
+          className={`flex flex-row justify-start items-center gap-2 py-2 w-full mt-2 cursor-pointer ${
             current === "3" && "bg-[#E1E6EF] font-bold rounded-r-lg"
           }`}
           onClick={() => setCurrent("3")}
@@ -76,13 +78,51 @@ const Dashboard = () => {
             Articles
           </p>
         </div>
-        <hr />
-        <p className="pl-5 pt-5 font-bold">Support</p>
         <div
           className={`flex flex-row justify-start items-center gap-2 py-2 w-full mt-2 cursor-pointer ${
             current === "4" && "bg-[#E1E6EF] font-bold rounded-r-lg"
           }`}
           onClick={() => setCurrent("4")}
+        >
+          <img
+            src={
+              current === "4"
+                ? "./header/product-filled.png"
+                : "./header/product.png"
+            }
+            alt="overviewfilled"
+            className="pl-5"
+          />
+          <p className="text-[14px] font-light hidden md:inline-block">
+            Customers
+          </p>
+        </div>
+        <div
+          className={`flex flex-row justify-start items-center gap-2 py-2 w-full mt-2 mb-16 cursor-pointer ${
+            current === "5" && "bg-[#E1E6EF] font-bold rounded-r-lg"
+          }`}
+          onClick={() => setCurrent("5")}
+        >
+          <img
+            src={
+              current === "5"
+                ? "./header/product-filled.png"
+                : "./header/product.png"
+            }
+            alt="overviewfilled"
+            className="pl-5"
+          />
+          <p className="text-[14px] font-light hidden md:inline-block">
+            Designers
+          </p>
+        </div>
+        <hr />
+        <p className="pl-5 pt-5 font-bold">Support</p>
+        <div
+          className={`flex flex-row justify-start items-center gap-2 py-2 w-full mt-2 cursor-pointer ${
+            current === "6" && "bg-[#E1E6EF] font-bold rounded-r-lg"
+          }`}
+          onClick={() => setCurrent("6")}
         >
           <img
             src="./header/settings.png"
@@ -104,7 +144,9 @@ const Dashboard = () => {
       {current === "1" &&<UploadImages/>  }
       {current === "2" && <Product user={user} plan={plan}/>}
       {current === "3" && <Article/>}
-      {current === "4" && <Settings user={user} plan={plan}/>}
+      {current === "4" && <Customers/>}
+      {current === "5" && <Designers/>}
+      {current === "6" && <Settings user={user} plan={plan}/>}
     </section>
   );
 };
