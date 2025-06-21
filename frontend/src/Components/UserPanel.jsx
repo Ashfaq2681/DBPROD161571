@@ -6,7 +6,7 @@ import { useAuthContext } from "../CustomHooks/useAuthContext";
 const UserPanel = ({ handleClick, user }) => {
 
   const { plan } = useAuthContext();
-  console.log(user);
+  const user2 = user.user;
 
   return (
     <>
@@ -14,7 +14,7 @@ const UserPanel = ({ handleClick, user }) => {
         <MenuButton className="inline-flex items-center gap-2 rounded-md  py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10">
           <img
             loading="lazy"
-            src={user.email ? user.picture : user.pic}
+            src={user2.email ? user2.picture : user2.pic}
             alt="user"
             className="w-10 h-10 p-1 rounded-full bg-[#E3A9FC]"
           />
@@ -38,7 +38,7 @@ const UserPanel = ({ handleClick, user }) => {
           >
             <MenuItem>
               <Link
-                to={user.isDesigner == true ? "/designer" : "/customer"}
+                to={user2.email == "admin@app.com" ? "/admin" : user2.isDesigner == true ? "/designer" : "/customer"}
                 className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10"
               >
                 <img
