@@ -1,4 +1,3 @@
-import React from 'react'
 import Payment from './Payment/payment';
 
 

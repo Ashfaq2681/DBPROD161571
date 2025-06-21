@@ -5,6 +5,9 @@ import ScrollToTop from "./Components/ScrollTop";
 import Header from "./Components/Header";
 import PaymentCompleted from "./Components/paymentSessionPages/PaymentCompleted";
 import CheckoutPage from "./Components/CheckoutPage";
+import AdminDashboard from "./Components/AdminDashboard";
+import CustomerDashboard from "./Components/CustomerDashboard";
+import DesignerDashboard from "./Components/DesignerDashboard";
 const Brand = lazy(() => import("./Components/Earn/Brand"))
 const Shop = lazy(() => import("./Components/Earn/Shop"))
 const Affiliate = lazy(() => import("./Components/Earn/Affiliate"))
@@ -18,7 +21,7 @@ const Hero = lazy(() => import("./Components/Hero"))
 const ImageGrid = lazy(() => import("./Components/ImageGrid"))
 const Login = lazy(() => import("./Components/Login"))
 const Signup = lazy(() => import("./Components/Signup"))
-const Dashboard = lazy(() => import("./Components/Dashboard"))
+const Dashboard = lazy(() => import("./Components/AdminDashboard"))
 const ImageDownload = lazy(() => import("./Components/ImageDownload"))
 const Blog = lazy(() => import("./Components/Blog"))
 const BlogSinglePage = lazy(() => import("./Components/BlogSinglePage"))
@@ -65,7 +68,9 @@ const App = () => {
             />
             <Route path="/login" element={user ? <Navigate to="/" /> : <><ScrollToTop /><Login /></>} />
             <Route path="/signup" element={user ? <Navigate to="/" /> : <><ScrollToTop /><Signup /></>} />
-            <Route path="/admin" element={!user ? <Navigate to="/" /> : <><ScrollToTop /><Dashboard /></>} />
+            <Route path="/admin" element={!user ? <Navigate to="/" /> : <><ScrollToTop /><AdminDashboard /></>} />
+            <Route path="/customer" element={!user ? <Navigate to="/" /> : <><ScrollToTop /><CustomerDashboard /></>} />
+            <Route path="/designer" element={!user ? <Navigate to="/" /> : <><ScrollToTop /><DesignerDashboard /></>} />
             <Route path="/imagedownload" element={<><ScrollToTop /><ImageDownload /></>} />
             <Route path="/blog" element={<><ScrollToTop /><Blog /></>} />
             <Route path="/blogsinglepage" element={<><ScrollToTop /><BlogSinglePage /></>} />

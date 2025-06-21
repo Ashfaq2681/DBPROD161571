@@ -6,6 +6,7 @@ import { useAuthContext } from "../CustomHooks/useAuthContext";
 const UserPanel = ({ handleClick, user }) => {
 
   const { plan } = useAuthContext();
+  console.log(user);
 
   return (
     <>
@@ -37,7 +38,7 @@ const UserPanel = ({ handleClick, user }) => {
           >
             <MenuItem>
               <Link
-                to={`/admin`}
+                to={user.isDesigner == true ? "/designer" : "/customer"}
                 className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10"
               >
                 <img

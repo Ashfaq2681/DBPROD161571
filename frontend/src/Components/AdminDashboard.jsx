@@ -1,14 +1,13 @@
-import { memo, useEffect, useRef, useState } from "react";
+import { memo, useState } from "react";
 import { useAuthContext } from "../CustomHooks/useAuthContext";
 import Settings from "./AccoutSettings/Settings";
 import Product from "./AccoutSettings/Product";
 import Article from "./AccoutSettings/Article";
 import UploadImages from "./AccoutSettings/UploadImages";
-import UploadForm from "./AccoutSettings/Test";
 import Customers from "./Customers";
 import Designers from "./Designers";
 
-const Dashboard = () => {
+const AdminDashboard = () => {
   const { user, plan } = useAuthContext();
 
   const [current, setCurrent] = useState("1");
@@ -151,4 +150,4 @@ const Dashboard = () => {
   );
 };
 
-export default memo(Dashboard);
+export default memo(AdminDashboard);
