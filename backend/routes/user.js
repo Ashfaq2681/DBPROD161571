@@ -4,6 +4,8 @@ const images = require("../models/imageModel.js");
 const userImages = require("../models/userImageModel.js");
 const article = require("../models/articleModel.js");
 
+const userController = require("../controllers/userController");
+
 const storageHome = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "uploads/images");
@@ -38,25 +40,8 @@ const storageUser = multer.diskStorage({
 
 const uploadUser = multer({ storage: storageUser });
 
-//controller functions
-const {
-  signupUser,
-  loginUser,
-  createcheckoutSession,
-} = require("../controllers/userController");
 
 const router = express.Router();
-
-//login route
-router.post("/login", loginUser);
-
-//google login route
-
-//signup route
-router.post("/signup", signupUser);
-
-//create-checkout-session route
-router.post("/create-checkout-session", createcheckoutSession);
 
 
 router.post(
@@ -287,6 +272,12 @@ router.get("/search", async (req, res) => {
     res.status(500).json({ status: "error", message: "Failed to search imageList" });
   }
 });
+
+router.post("/login", userController.loginUser);
+router.post("/signup", userController.signupUser);
+router.post("/create-checkout-session", userController.createcheckoutSession);
+router.get("/getCustomers", userController.getCustomers);
+router.get("/getDesigners", userController.getDesigners);
 
 
 module.exports = router;

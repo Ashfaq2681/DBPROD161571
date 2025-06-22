@@ -18,7 +18,7 @@ const CustomerDashboard = () => {
           className="h-4 w-4 ml-5"
         />
         <div
-          className={`flex flex-row justify-start items-center gap-2 py-2 w-full mt-10 cursor-pointer ${
+          className={`mb-[160px] flex flex-row justify-start items-center gap-2 py-2 w-full mt-10 cursor-pointer ${
             current === "1" && "bg-[#E1E6EF] font-bold rounded-none md:rounded-r-lg"
           }`}
           onClick={() => setCurrent("1")}
@@ -33,26 +33,7 @@ const CustomerDashboard = () => {
             className="px-5 md:pr-0"
           />
           <p className="text-[14px] font-light hidden md:inline-block">
-            Purchased Packages
-          </p>
-        </div>
-        <div
-          className={`flex flex-row justify-start items-center gap-2 py-2 w-full mt-2 mb-[140px] cursor-pointer ${
-            current === "5" && "bg-[#E1E6EF] font-bold rounded-r-lg"
-          }`}
-          onClick={() => setCurrent("5")}
-        >
-          <img
-            src={
-              current === "5"
-                ? "./header/product-filled.png"
-                : "./header/product.png"
-            }
-            alt="overviewfilled"
-            className="pl-5"
-          />
-          <p className="text-[14px] font-light hidden md:inline-block">
-            Download history
+            Products
           </p>
         </div>
         <hr />
@@ -80,8 +61,7 @@ const CustomerDashboard = () => {
         </div>
       </nav>
       {/* */}
-      {current === "1" &&<UploadImages/>  }
-      {current === "2" && <Product user={user} plan={plan}/>}
+      {current === "1" && <Product user={user} plan={plan}/>}
       {current === "6" && <Settings user={user} plan={plan}/>}
     </section>
   );

@@ -77,4 +77,38 @@ const createcheckoutSession = async (req, res) => {
     res.json({id:session.id})
   }
 
-module.exports = { signupUser, loginUser, createcheckoutSession }
+const getCustomers = async (req, res) => {
+    try {
+        const customers = await User.find({
+          isDesigner: false
+        })
+        .select("-password");
+
+        res.status(200).json(customers)
+
+    } catch (error) {
+        res.status(400).json({ error: error.message })
+    }
+}
+
+const getDesigners = async (req, res) => {
+    try {
+        const designers = await User.find({
+          isDesigner: true
+        })
+        .select("-password");
+
+        res.status(200).json(designers);
+
+    } catch (error) {
+        res.status(400).json({ error: error.message })
+    }
+}
+
+module.exports = {
+  signupUser,
+  loginUser,
+  createcheckoutSession,
+  getCustomers,
+  getDesigners
+}

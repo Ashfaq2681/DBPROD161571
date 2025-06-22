@@ -25,24 +25,27 @@ app.use((req, res, next) => {
 app.use("/api/user", userRoute);
 
 // certificates:
-const sslOptions = {
-  key: fs.readFileSync('/etc/letsencrypt/live/api.curatedgallery.org/privkey.pem'),
-  cert: fs.readFileSync('/etc/letsencrypt/live/api.curatedgallery.org/fullchain.pem')
-};
+// const sslOptions = {
+//   key: fs.readFileSync('/etc/letsencrypt/live/api.curatedgallery.org/privkey.pem'),
+//   cert: fs.readFileSync('/etc/letsencrypt/live/api.curatedgallery.org/fullchain.pem')
+// };
 
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => {
-    // Start HTTPS server
-    https.createServer(sslOptions, app).listen(443, () => {
-      console.log(`HTTPS server running at https://api.curatedgallery.org`);
-    });
+    // https.createServer(sslOptions, app).listen(443, () => {
+    //   console.log(`HTTPS server running at https://api.curatedgallery.org`);
+    // });
 
-    // (Optional) Redirect HTTP → HTTPS
-    http.createServer((req, res) => {
-      res.writeHead(301, { Location: 'https://' + req.headers.host + req.url });
-      res.end();
-    }).listen(80);
+    // http.createServer((req, res) => {
+    //   res.writeHead(301, { Location: 'https://' + req.headers.host + req.url });
+    //   res.end();
+    // }).listen(80);
+
+    // For debugging
+    app.listen(80, (req, res) => {
+      console.log("Listening at http://localhost:80/api");
+    });
   })
   .catch((error) => {
     console.log(error);
