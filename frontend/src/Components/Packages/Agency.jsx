@@ -35,7 +35,7 @@ const Agency = () => {
         </p>
         <span className="text-[70px] font-bold">
           Get all your images with the{" "}
-          <p className="text-[#4A16D8]">Agency plans</p>
+          <p className="text-[#3b82f6]">Agency plans</p>
         </span>
         <p className="text-[24px] font-light mt-2 lg:mt-10">
           From small stuff to the big picture, streamline, explore, choose and
@@ -49,7 +49,7 @@ const Agency = () => {
               onClick={handleMonthly}
               className={`p-4 border-y border-l rounded-l-full ${
                 monthly
-                  ? "bg-[#4A16D8] text-white border-[#4A16D8]"
+                  ? "bg-[#3b82f6] text-white border-[#3b82f6]"
                   : "bg-[#F5F5F5] text-black border-black"
               }`}
             >
@@ -60,7 +60,7 @@ const Agency = () => {
               className={`p-4 border-y border-r rounded-r-full ${
                 monthly
                   ? "bg-[#F5F5F5] text-black border-black"
-                  : "bg-[#4A16D8] text-white border-[#4A16D8]"
+                  : "bg-[#3b82f6] text-white border-[#3b82f6]"
               }`}
             >
               Annual Payment
@@ -82,11 +82,11 @@ const Agency = () => {
                 <li className="flex flex-row gap-3 my-10"><img loading="lazy" src="./legal/tick.svg" alt="tick" className="w-6 h-6"/>Mac/Windows App</li>
                 <li className="flex flex-row gap-3 my-10"><img loading="lazy" src="./legal/tick.svg" alt="tick" className="w-6 h-6"/>Free lifetime updates</li>
               </ul>
-              <button onClick={() => checkSubscription(AgencyFree)} className="px-8 rounded-full bg-[#4A16D8] text-white border border-[#4A16D8] mx-auto font-bold py-2 w-full mb-3">
+              <button onClick={() => checkSubscription(AgencyFree)} className="px-8 rounded-full bg-[#3b82f6] text-white border border-[#3b82f6] mx-auto font-bold py-2 w-full mb-3">
                 Buy Premium Images
               </button>
             </div>
-            <div id="pro" className="p-10 bg-[#4A16D8] rounded-xl shadow-lg hover:shadow-2xl duration-300 ease-in-out text-gray-300">
+            <div id="pro" className="p-10 bg-[#3b82f6] rounded-xl shadow-lg hover:shadow-2xl duration-300 ease-in-out text-gray-300">
               <p className="text-[24px] font-bold">Pro</p>
               <span className="text-[48px] font-bold text-white flex flex-row items-center gap-3">
                 $49 <p className="text-gray-200 text-[20px]">/ Month</p>
@@ -101,7 +101,7 @@ const Agency = () => {
                 <li className="flex flex-row gap-3 my-10"><img loading="lazy" src="./legal/tick.svg" alt="tick" className="w-6 h-6 bg-white rounded-full"/>Mac/Windows App</li>
                 <li className="flex flex-row gap-3 my-10"><img loading="lazy" src="./legal/tick.svg" alt="tick" className="w-6 h-6 bg-white rounded-full"/>Free lifetime updates</li>
               </ul>
-              <button onClick={() => checkSubscription(AgencyPro)} className="px-8 rounded-full bg-white text-[#4A16D8] border border-white mx-auto font-bold py-2 w-full mb-3">
+              <button onClick={() => checkSubscription(AgencyPro)} className="px-8 rounded-full bg-white text-[#3b82f6] border border-white mx-auto font-bold py-2 w-full mb-3">
                 Buy Premium Images
               </button>
             </div>
@@ -120,7 +120,7 @@ const Agency = () => {
                 <li className="flex flex-row gap-3 my-10"><img loading="lazy" src="./legal/tick.svg" alt="tick" className="w-6 h-6"/>Mac/Windows App</li>
                 <li className="flex flex-row gap-3 my-10"><img loading="lazy" src="./legal/tick.svg" alt="tick" className="w-6 h-6"/>Free lifetime updates</li>
               </ul>
-              <button onClick={() => checkSubscription(FullAgency)} className="px-8 rounded-full bg-[#4A16D8] text-white border border-[#4A16D8] mx-auto font-bold py-2 w-full mb-3">
+              <button onClick={() => checkSubscription(FullAgency)} className="px-8 rounded-full bg-[#3b82f6] text-white border border-[#3b82f6] mx-auto font-bold py-2 w-full mb-3">
                 Buy Premium Images
               </button>
             </div>

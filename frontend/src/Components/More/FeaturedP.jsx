@@ -10,7 +10,7 @@ const FeaturedP = () => {
         </p>
         <span className="text-[70px] font-bold my-5 lg:my-10">
           Check out all the amazing Photos with{" "}
-          <p className="text-[#4A16D8]">Featured Photos</p>
+          <p className="text-[#3b82f6]">Featured Photos</p>
         </span>
         <p className="text-[24px] font-light mt-2 lg:mt-10">
           From the best photographers out there wth real passion and talent to show more

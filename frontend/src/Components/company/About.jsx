@@ -51,7 +51,7 @@ const About = () => {
                 </div>
             </div>
         </div>
-        <div className='bg-[#4A16D8] text-center py-10 w-full p-2 mx-auto flex flex-col justify-center items-center text-white leading-tight'>
+        <div className='bg-[#3b82f6] text-center py-10 w-full p-2 mx-auto flex flex-col justify-center items-center text-white leading-tight'>
             <p className='text-[48px] font-bold max-w-[732px]'>We invite you to become a part of our growing community!</p>
             <p className='text-[24px] font-light py-5 max-w-[1160px]'>Whether you're a creator looking to share your work or a content enthusiast seeking inspiration, there's a place for you here. Connect with like-minded individuals, discover new perspectives.</p>
             <p className='bg-white text-[#5E5E5E] py-2 font-medium rounded-full w-[300px]'>Seeking inspiration?  Connect With Us.</p>
@@ -77,7 +77,7 @@ const About = () => {
                     <input type="email" className='inputContact my-3 w-full' placeholder='Email'/>
                     <input type="number" className='inputContact my-3 w-full' placeholder='Phone'/>
                     <textarea name="contactMessage" id="contactMessage" className='inputContact my-3 w-full' placeholder='Type Your Message Here' rows={10}/>
-                    <button className='nav-btn bg-[#4A16D8] text-white border border-[#4A16D8] float-end'>Submit</button>
+                    <button className='nav-btn bg-[#3b82f6] text-white border border-[#3b82f6] float-end'>Submit</button>
                 </form>
             </div>
         </div>

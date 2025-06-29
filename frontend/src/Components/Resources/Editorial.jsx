@@ -14,7 +14,7 @@ const Editorial = () => {
           to new heights.
         </p>
         <div className="flex flex-row flex-wrap gap-10 justify-center items-center duration-300 ease-in-out mt-20 mb-40">
-          <div className="colldiv hover:bg-[#4A16D8] hover:text-white border-2 duration-300 ease-in-out border-[#4A16D8] rounded-md flex flex-col gap-2 justify-end items-start w-full lg:w-auto min-h-[330px] p-7 text-start">
+          <div className="colldiv hover:bg-[#3b82f6] hover:text-white border-2 duration-300 ease-in-out border-[#3b82f6] rounded-md flex flex-col gap-2 justify-end items-start w-full lg:w-auto min-h-[330px] p-7 text-start">
             <p className="text-[30px] font-bold">
               Tailored
               <br /> Solutions
@@ -26,7 +26,7 @@ const Editorial = () => {
               Sign up Now
             </button>
           </div>
-          <div className="colldiv hover:bg-[#4A16D8] hover:text-white border-2  duration-300 ease-in-out border-[#4A16D8] rounded-md flex flex-col gap-2 justify-end items-start min-h-[330px] p-7 text-start w-full lg:max-w-[688px]">
+          <div className="colldiv hover:bg-[#3b82f6] hover:text-white border-2  duration-300 ease-in-out border-[#3b82f6] rounded-md flex flex-col gap-2 justify-end items-start min-h-[330px] p-7 text-start w-full lg:max-w-[688px]">
             <p className="text-[30px] font-bold">
               Professional
               <br /> Quality
@@ -39,7 +39,7 @@ const Editorial = () => {
               Sign up Now
             </button>
           </div>
-          <div className="colldiv hover:bg-[#4A16D8] hover:text-white border-2  duration-300 ease-in-out border-[#4A16D8] rounded-md flex flex-col gap-2 justify-end items-start w-full lg:w-auto min-h-[330px] p-7 text-start">
+          <div className="colldiv hover:bg-[#3b82f6] hover:text-white border-2  duration-300 ease-in-out border-[#3b82f6] rounded-md flex flex-col gap-2 justify-end items-start w-full lg:w-auto min-h-[330px] p-7 text-start">
             <p className="text-[30px] font-bold">
               Get Started <br />
               Today
@@ -115,7 +115,7 @@ const Editorial = () => {
         </p>
         <div className="flex flex-row flex-wrap justify-center items-center gap-7 text-center max-w-[1150px]">
           {collectionButtons.map((item) => (
-            <p key={item} className="px-8 py-4 bg-[#4A16D8] text-white text-[24px] font-bold rounded-full">
+            <p key={item} className="px-8 py-4 bg-[#3b82f6] text-white text-[24px] font-bold rounded-full">
             {item}
             </p>
           ))}

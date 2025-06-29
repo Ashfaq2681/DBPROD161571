@@ -10,7 +10,7 @@ const Security = () => {
         <hr />
         <div className="flex flex-row justify-between mt-10">
           <p className="text-[30px] font-bold">Google 2FA Verification</p>
-          <button className="nav-btn bg-white text-black hover:bg-[#4A16D8] hover:text-white border border-gray-500 hover:border-[#4A16D8]">
+          <button className="nav-btn bg-white text-black hover:bg-[#3b82f6] hover:text-white border border-gray-500 hover:border-[#3b82f6]">
             Enable
           </button>
         </div>

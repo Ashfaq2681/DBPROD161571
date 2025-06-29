@@ -191,7 +191,7 @@ const Billing = ({ plan }) => {
           </div>
           <button
             onClick={() => checkSubscription(packageDetail)}
-            className="px-8 rounded-full bg-white text-black hover:bg-[#4A16D8] hover:text-white border border-gray-500 duration-300 hover:border-[#4A16D8] mx-auto py-2 w-full mb-3"
+            className="px-8 rounded-full bg-white text-black hover:bg-[#3b82f6] hover:text-white border border-gray-500 duration-300 hover:border-[#3b82f6] mx-auto py-2 w-full mb-3"
           >
             Upgrade
           </button>

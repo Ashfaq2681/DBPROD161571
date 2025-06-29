@@ -16,7 +16,7 @@ const UserPanel = ({ handleClick, user }) => {
             loading="lazy"
             src={user2.email ? user2.picture : user2.pic}
             alt="user"
-            className="w-10 h-10 p-1 rounded-full bg-[#E3A9FC]"
+            className="w-10 h-10 p-1 rounded-full bg-[#7195cf]"
           />
           <img
             loading="lazy"

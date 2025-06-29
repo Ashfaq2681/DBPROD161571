@@ -13,7 +13,7 @@ const PaymentCompleted = () => {
             <h4 className='font-semibold mt-4'>Animation Templates</h4>
             <button
                 onClick={handleBackToHome}
-                className="mt-3 nav-btn bg-[#4A16D8] text-white border border-[#4A16D8] font-bold w-full sm:w-52 h-10">
+                className="mt-3 nav-btn bg-[#3b82f6] text-white border border-[#3b82f6] font-bold w-full sm:w-52 h-10">
                 Back to Home
             </button>
         </div>

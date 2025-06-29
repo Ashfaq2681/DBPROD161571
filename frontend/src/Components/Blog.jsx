@@ -69,7 +69,7 @@ const Blog = () => {
           placeholder="Search image..."
           className="rounded-full border border-[#5E5E5E] pl-10 py-3 w-full focus:outline-none"
         />
-        <button className="px-8 rounded-full bg-[#4A16D8] text-white absolute right-0 mr-1 py-2">
+        <button className="px-8 rounded-full bg-[#3b82f6] text-white absolute right-0 mr-1 py-2">
           Search
         </button>
       </form>
@@ -79,7 +79,7 @@ const Blog = () => {
             key={item.id}
             href={item.link}
             className={`text-[20px] ${
-              isActive === item.id ? "text-[#E3A9FC]" : "text-[#5E5E5E]"
+              isActive === item.id ? "text-[#7195cf]" : "text-[#5E5E5E]"
             } hover:text-black`}
             onClick={() => handleActive(item.id)}
           >

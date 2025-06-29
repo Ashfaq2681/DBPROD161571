@@ -19,7 +19,7 @@ const Premium = () => {
           alt="hero"
           className="h-auto lg:max-w-[771px] lg:h-[608px] mt-10"
         />
-        <div className="py-8 px-20 space-y-5 lg:space-y-14 bg-[#4A16D8] text-white text-[24px] font-bold lg:mt-10">
+        <div className="py-8 px-20 space-y-5 lg:space-y-14 bg-[#3b82f6] text-white text-[24px] font-bold lg:mt-10">
           <p>Access to Exclusive Content</p>
           <p>Ad-Free Experience</p>
           <p>Early Access and Sneak Peeks</p>
@@ -36,7 +36,7 @@ const Premium = () => {
         Ready to take your experience to the next level? Upgrade to our premium content subscription today and unlock a world of exclusive benefits and premium features. Join our premium community and discover why our subscribers love being part of the club.
         </p>
         <div className="flex flex-row flex-wrap gap-10 justify-center items-center duration-300 ease-in-out mt-20 mb-40">
-          <div className="colldiv bg-white hover:bg-[#4A16D8] hover:text-white border-2 duration-300 ease-in-out border-[#4A16D8] rounded-md flex flex-col gap-2 justify-end items-start w-full lg:w-auto min-h-[330px] p-7 text-start">
+          <div className="colldiv bg-white hover:bg-[#3b82f6] hover:text-white border-2 duration-300 ease-in-out border-[#3b82f6] rounded-md flex flex-col gap-2 justify-end items-start w-full lg:w-auto min-h-[330px] p-7 text-start">
             <p className="text-[30px] font-bold">
               Tailored
               <br /> Solutions
@@ -48,7 +48,7 @@ const Premium = () => {
               Sign up Now
             </button>
           </div>
-          <div className="colldiv bg-white hover:bg-[#4A16D8] hover:text-white border-2  duration-300 ease-in-out border-[#4A16D8] rounded-md flex flex-col gap-2 justify-end items-start min-h-[330px] p-7 text-start w-full lg:max-w-[688px]">
+          <div className="colldiv bg-white hover:bg-[#3b82f6] hover:text-white border-2  duration-300 ease-in-out border-[#3b82f6] rounded-md flex flex-col gap-2 justify-end items-start min-h-[330px] p-7 text-start w-full lg:max-w-[688px]">
             <p className="text-[30px] font-bold">
               Professional
               <br /> Quality
@@ -61,7 +61,7 @@ const Premium = () => {
               Sign up Now
             </button>
           </div>
-          <div className="colldiv bg-white hover:bg-[#4A16D8] hover:text-white border-2  duration-300 ease-in-out border-[#4A16D8] rounded-md flex flex-col gap-2 justify-end items-start w-full lg:w-auto min-h-[330px] p-7 text-start">
+          <div className="colldiv bg-white hover:bg-[#3b82f6] hover:text-white border-2  duration-300 ease-in-out border-[#3b82f6] rounded-md flex flex-col gap-2 justify-end items-start w-full lg:w-auto min-h-[330px] p-7 text-start">
             <p className="text-[30px] font-bold">
               Get Started <br />
               Today
@@ -76,7 +76,7 @@ const Premium = () => {
         </div>
       </div>
       <div className="bg-[#F5F5F5] flex flex-col items-center gap-8 pb-40 text-[#505153] px-8 md:px-10 text-center">
-        <p className="text-[#4A16D8] text-[30px] font-bold bg-white px-8 py-1 shadow-xl rounded-md">
+        <p className="text-[#3b82f6] text-[30px] font-bold bg-white px-8 py-1 shadow-xl rounded-md">
           Join Our Affiliate Program
         </p>
         <p className="text-[24px] font-bold max-w-[750px]">
@@ -124,7 +124,7 @@ const Premium = () => {
                 placeholder="Type Your Message Here"
                 rows={10}
               />
-              <button className="px-8 rounded-full py-1 bg-[#4A16D8] text-white border border-[#4A16D8] float-end">
+              <button className="px-8 rounded-full py-1 bg-[#3b82f6] text-white border border-[#3b82f6] float-end">
                 Submit
               </button>
             </form>

@@ -22,7 +22,7 @@ const Licence = () => {
         </p>
         <span className="text-[48px] lg:text-[70px] font-bold my-5 lg:my-10">
           All images and data on Harry Photo are{" "}
-          <p className="text-[#4A16D8]">licenced and copyright free </p>
+          <p className="text-[#3b82f6]">licenced and copyright free </p>
           under our terms and policy usage
         </span>
         <p className="text-[24px] font-light mt-2 lg:mt-10">

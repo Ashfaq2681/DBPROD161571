@@ -33,7 +33,7 @@ const Contact = () => {
             placeholder="Type Your Message Here"
             rows={10}
           />
-          <button className="nav-btn bg-[#4A16D8] text-white border border-[#4A16D8] float-end">
+          <button className="nav-btn bg-[#3b82f6] text-white border border-[#3b82f6] float-end">
             Submit
           </button>
         </form>

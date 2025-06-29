@@ -44,7 +44,7 @@ const Trending = () => {
             <p className="text-[24px] lg:text-[35px] font-light mt-3">Every photo in our collection is handpicked for we make it sure that it suits your needs.</p>
         </div>
       </div>
-      <div className="bg-[#4A16D8] text-white flex flex-col justify-center items-center gap-5 py-10 text-center leading-tight">
+      <div className="bg-[#3b82f6] text-white flex flex-col justify-center items-center gap-5 py-10 text-center leading-tight">
         <p className="text-[48px] font-bold">Enjoy Peace of Mind</p>
         <p className="text-[24px] font-light max-w-[1100px]">Enjoy peace of mind knowing that all our photos come with royalty-free licensing. Use them for commercial projects, social media, websites, and more without worrying about additional fees.</p>
         <button className="px-9 py-4 rounded-full bg-white text-[#505153] font-bold text-[24px]">Sign up Now</button>

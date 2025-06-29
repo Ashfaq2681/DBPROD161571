@@ -45,19 +45,19 @@ const Header = () => {
                 loading="lazy"
                 src="../assets/icons/profileIcon1.png"
                 alt="profileicon"
-                className="p-2 bg-[#E3A9FC] text-black w-2 h-2 rounded-sm"
+                className="p-2 bg-[#7195cf] text-black w-2 h-2 rounded-sm"
               />
               <img
                 loading="lazy"
                 src="../assets/icons/profileIcon2.png"
                 alt="profileicon"
-                className="p-2 bg-[#E3A9FC] text-black w-2 h-2 rounded-sm"
+                className="p-2 bg-[#7195cf] text-black w-2 h-2 rounded-sm"
               />
               <img
                 loading="lazy"
                 src="../assets/icons/profileIcon3.png"
                 alt="profileicon"
-                className="p-2 bg-[#E3A9FC] text-black w-2 h-2 rounded-sm"
+                className="p-2 bg-[#7195cf] text-black w-2 h-2 rounded-sm"
               />
               <p>{user.name || user.email}</p>
             </div>
@@ -68,12 +68,12 @@ const Header = () => {
         ) : (
           <div className="hidden md:flex flex-row gap-x-10 justify-center items-center font-semibold text-center">
             <Link to={`/login`}>
-              <button className="nav-btn text-[#4A16D8] border border-[#4A16D8]">
+              <button className="nav-btn text-[#3b82f6] border border-[#3b82f6]">
                 Login
               </button>
             </Link>
             <Link to={`/signup`}>
-              <button className="nav-btn bg-[#4A16D8] text-white border border-[#4A16D8]">
+              <button className="nav-btn bg-[#3b82f6] text-white border border-[#3b82f6]">
                 Sign up
               </button>
             </Link>
@@ -97,12 +97,12 @@ const Header = () => {
               Blog
             </Link>
             <Link to={`/login`}>
-              <button className="px-8 py-1 rounded-full text-[#4A16D8] border border-[#4A16D8]">
+              <button className="px-8 py-1 rounded-full text-[#3b82f6] border border-[#3b82f6]">
                 Login
               </button>
             </Link>
             <Link to={`/signup`}>
-              <button className="px-7 py-1 rounded-full bg-[#4A16D8] text-white border border-[#4A16D8]">
+              <button className="px-7 py-1 rounded-full bg-[#3b82f6] text-white border border-[#3b82f6]">
                 Sign up
               </button>
             </Link>

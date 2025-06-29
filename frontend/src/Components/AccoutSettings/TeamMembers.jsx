@@ -35,7 +35,7 @@ const TeamMembers = () => {
             className="inputContact my-3 w-full"
             placeholder="Email"
           />
-          <button className="nav-btn bg-[#4A16D8] text-white border border-[#4A16D8] float-end">
+          <button className="nav-btn bg-[#3b82f6] text-white border border-[#3b82f6] float-end">
             Add
           </button>
           <p className="text-[36px] font-bold text-[#727272]] text-[#727272] mt-10">

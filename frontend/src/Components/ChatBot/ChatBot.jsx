@@ -38,7 +38,7 @@ const CustomChatBot = () => {
   const customTheme = {
       embedded: true,
       primaryColor: "#FF00FF",
-      secondaryColor: "#4A16D8"
+      secondaryColor: "#3b82f6"
   }
   
   const header = {
@@ -113,7 +113,7 @@ const CustomChatBot = () => {
           message: `${searchResult.length} Images found`,
           render: (
               <div className="mt-5">
-                <Link to={`/searchResult`} className="px-4 py-3 rounded-full text-[#4A16D8] hover:text-white hover:bg-[#4A16D8] border border-[#4A16D8] ml-5 mt-[10px] text-[16px]" state={{ searchResult }}>
+                <Link to={`/searchResult`} className="px-4 py-3 rounded-full text-[#3b82f6] hover:text-white hover:bg-[#3b82f6] border border-[#3b82f6] ml-5 mt-[10px] text-[16px]" state={{ searchResult }}>
                   Check Images
               </Link>
               </div>

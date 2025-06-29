@@ -16,7 +16,7 @@ const Featured = () => {
             Products to trending items, this carefully selected assortment
             showcases some of our most popular and beloved offerings.
           </p>
-          <button className="px-8 py-4 rounded-full font-bold bg-[#4A16D8] text-white border border-[#4A16D8]">
+          <button className="px-8 py-4 rounded-full font-bold bg-[#3b82f6] text-white border border-[#3b82f6]">
             Sign Up to Start
           </button>
         </div>
@@ -113,7 +113,7 @@ const Featured = () => {
         </div>
       </div>
       <div className="bg-[#F5F5F5] flex flex-col items-center gap-8  text-[#505153] px-8 md:px-10 py-20 lg:py-40 text-center">
-        <p className="text-[#4A16D8] text-[30px] font-bold bg-white px-8 py-1 shadow-xl rounded-md">
+        <p className="text-[#3b82f6] text-[30px] font-bold bg-white px-8 py-1 shadow-xl rounded-md">
           Join Our Affiliate Program
         </p>
         <p className="text-[24px] font-bold max-w-[750px]">
@@ -161,7 +161,7 @@ const Featured = () => {
                 placeholder="Type Your Message Here"
                 rows={10}
               />
-              <button className="px-8 rounded-full py-1 bg-[#4A16D8] text-white border border-[#4A16D8] float-end">
+              <button className="px-8 rounded-full py-1 bg-[#3b82f6] text-white border border-[#3b82f6] float-end">
                 Submit
               </button>
             </form>

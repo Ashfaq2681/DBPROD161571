@@ -20,7 +20,7 @@ const Investor = () => {
             buisinesses looking for investment and investors with the capital,
             talent, contacts and knowledge to help them succeed
           </p>
-          <button className="px-8 rounded-full py-2 bg-[#4A16D8] text-white border border-[#4A16D8] text-[24px] lg:mt-10">
+          <button className="px-8 rounded-full py-2 bg-[#3b82f6] text-white border border-[#3b82f6] text-[24px] lg:mt-10">
             Discover Interests
           </button>
         </div>

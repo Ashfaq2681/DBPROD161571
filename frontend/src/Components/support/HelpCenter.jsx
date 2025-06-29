@@ -11,9 +11,9 @@ const HelpCenter = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente adipisci dolor tempora labore voluptatibus recusandae iusto consequuntur voluptate eveniet? Ex esse dignissimos amet voluptatibus maxime natus laboriosam expedita, placeat voluptas?
         </p>
         <div className="flex flex-row flex-wrap gap-10 justify-center items-center mt-10 ml-0 md:ml-5 ">
-            <button className="px-10 rounded-full bg-white hover:bg-[#4A16D8] hover:text-white duration-300 ease-in-out text-[#4A16D8] border border-[#4A16D8] font-bold py-4">Chat with Support</button>
-            <p className="underline decoration-2 underline-offset-4 font-bold text-[18px] hover:text-[#4A16D8] cursor-pointer">+123 456 789</p>
-            <p className="underline decoration-2 underline-offset-4 font-bold text-[18px] hover:text-[#4A16D8] cursor-pointer">support@harryphoto.com</p>
+            <button className="px-10 rounded-full bg-white hover:bg-[#3b82f6] hover:text-white duration-300 ease-in-out text-[#3b82f6] border border-[#3b82f6] font-bold py-4">Chat with Support</button>
+            <p className="underline decoration-2 underline-offset-4 font-bold text-[18px] hover:text-[#3b82f6] cursor-pointer">+123 456 789</p>
+            <p className="underline decoration-2 underline-offset-4 font-bold text-[18px] hover:text-[#3b82f6] cursor-pointer">support@harryphoto.com</p>
         </div>
       </div>
       <div className='flex flex-col gap-10 md:gap-20 justify-center items-center mt-20 px-10 pb-40'>
@@ -30,7 +30,7 @@ const HelpCenter = () => {
       </div>
       <div className="px-8 md:px-16 lg:px-20 xl:px-60 py-5 text-center space-y-10 pb-40">
         <p className="text-[48px] font-bold">Common Questions</p>
-        <div className="underline decoration-2 space-y-5 underline-offset-4 font-bold text-[18px] text-[#5c3bb7] hover:text-[#4a16d8] cursor-pointer">
+        <div className="underline decoration-2 space-y-5 underline-offset-4 font-bold text-[18px] text-[#5c3bb7] hover:text-[#3b82f6] cursor-pointer">
         <p>How do i reset my password?</p>
         <p>What payment methods are accepted?</p>
         <p>What are the terms and conditions?</p>

@@ -70,7 +70,7 @@ function Payment() {
                 </form>
                 <button
                     onClick={paymentSubmitHandler}
-                    className="mt-8 nav-btn bg-[#4A16D8] text-white border border-[#4A16D8] font-bold w-full sm:w-40 h-10"
+                    className="mt-8 nav-btn bg-[#3b82f6] text-white border border-[#3b82f6] font-bold w-full sm:w-40 h-10"
                 >
                     Sign up
                 </button>

@@ -100,7 +100,7 @@ const ImageDownload = () => {
                 Photoshop Layered
               </div>
             </div>
-            <button onClick={handleDownload} className="rounded-full py-2 px-5 my-10 lg:my-0 bg-[#4A16D8] font-semibold text-[20px] text-white border-2 border-[#4A16D8] max-w-[200px] flex flex-row gap-2">
+            <button onClick={handleDownload} className="rounded-full py-2 px-5 my-10 lg:my-0 bg-[#3b82f6] font-semibold text-[20px] text-white border-2 border-[#3b82f6] max-w-[200px] flex flex-row gap-2">
               <img loading="lazy" src="./imageDownload/arrowdown.png" alt="arrowdown" />
               Download
             </button>

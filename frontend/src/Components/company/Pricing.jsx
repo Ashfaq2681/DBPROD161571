@@ -73,14 +73,14 @@ const Pricing = () => {
             <input type="email" className='inputContact my-3 w-full' placeholder='Email' />
             <input type="number" className='inputContact my-3 w-full' placeholder='Phone' />
             <textarea name="contactMessage" id="contactMessage" className='inputContact my-3 w-full' placeholder='Type Your Message Here' rows={10} />
-            <button className='nav-btn bg-[#4A16D8] text-white border border-[#4A16D8] float-end'>Submit</button>
+            <button className='nav-btn bg-[#3b82f6] text-white border border-[#3b82f6] float-end'>Submit</button>
           </form>
         </div>
       </div>
       <div className='flex flex-col items-center justify-center py-40 px-7 bg-[#F5F5F5]'>
         <div className='flex flex-row mx-auto font-bold'>
-          <button onClick={handleMonthly} className={`p-4 border-y border-l rounded-l-full ${monthly ? "bg-[#4A16D8] text-white border-[#4A16D8]" : "bg-[#F5F5F5] text-black border-black"}`}>Monthly Payment</button>
-          <button onClick={handleMonthly} className={`p-4 border-y border-r rounded-r-full ${monthly ? "bg-[#F5F5F5] text-black border-black" : "bg-[#4A16D8] text-white border-[#4A16D8]"}`}>Annual Payment</button>
+          <button onClick={handleMonthly} className={`p-4 border-y border-l rounded-l-full ${monthly ? "bg-[#3b82f6] text-white border-[#3b82f6]" : "bg-[#F5F5F5] text-black border-black"}`}>Monthly Payment</button>
+          <button onClick={handleMonthly} className={`p-4 border-y border-r rounded-r-full ${monthly ? "bg-[#F5F5F5] text-black border-black" : "bg-[#3b82f6] text-white border-[#3b82f6]"}`}>Annual Payment</button>
         </div>
         <div className='flex flex-col lg:flex-row gap-10 text-[#727272] mt-24'>
           <div className='p-10 bg-white rounded-md'>
@@ -120,7 +120,7 @@ const Pricing = () => {
               </div>
               <p className='text-[30px] font-bold'>$ 899</p>
             </div>
-            <button className='nav-btn bg-[#4A16D8] text-white border border-[#4A16D8] font-bold py-1'>Buy Premium Images</button>
+            <button className='nav-btn bg-[#3b82f6] text-white border border-[#3b82f6] font-bold py-1'>Buy Premium Images</button>
           </div>
           <div className='p-10 bg-white rounded-md '>
             <p className='text-[36px] font-bold'>Team Collaborator</p>
@@ -159,7 +159,7 @@ const Pricing = () => {
               </div>
               <p className='text-[30px] font-bold'>$ 2699</p>
             </div>
-            <button className='nav-btn bg-[#4A16D8] text-white border border-[#4A16D8] mx-auto font-bold py-1'>Buy Premium Images</button>
+            <button className='nav-btn bg-[#3b82f6] text-white border border-[#3b82f6] mx-auto font-bold py-1'>Buy Premium Images</button>
           </div>
         </div>
       </div>
@@ -176,7 +176,7 @@ const Pricing = () => {
             </div>
           </div>
         ))}
-        <button className='nav-btn bg-[#4A16D8] text-white border border-[#4A16D8] mx-auto font-bold py-1'>Explore more Faqs</button>
+        <button className='nav-btn bg-[#3b82f6] text-white border border-[#3b82f6] mx-auto font-bold py-1'>Explore more Faqs</button>
       </div>
     </section>
   )

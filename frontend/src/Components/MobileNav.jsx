@@ -55,7 +55,7 @@ const MobileNav = ({
                             loading="lazy"
                             src={user.email ? userpic : user.picture}
                             alt="user"
-                            className="w-10 h-10 p-1 rounded-full bg-[#E3A9FC]"
+                            className="w-10 h-10 p-1 rounded-full bg-[#7195cf]"
                           />
                           <img
                             loading="lazy"
@@ -151,12 +151,12 @@ const MobileNav = ({
                 </a>
                 <Explore />
                 <Link to={`/login`} onClick={() => setMobileMenuOpen(false)}>
-                  <button className="nav-btn text-[#4A16D8] border border-[#4A16D8]">
+                  <button className="nav-btn text-[#3b82f6] border border-[#3b82f6]">
                     Login
                   </button>
                 </Link>
                 <Link to={`/signup`} onClick={() => setMobileMenuOpen(false)}>
-                  <button className="nav-btn bg-[#4A16D8] text-white border border-[#4A16D8]">
+                  <button className="nav-btn bg-[#3b82f6] text-white border border-[#3b82f6]">
                     Sign up
                   </button>
                 </Link>

@@ -53,7 +53,7 @@ const ImageGrid = () => {
             to={item.link}
             className={`heroButtons ${
               isActive === item.id
-                ? "bg-[#E3A9FC] text-white border-[#E3A9FC]"
+                ? "bg-[#7195cf] text-white border-[#7195cf]"
                 : "text-[#505153] border-[#969696] bg-white"
             }`}
             onClick={() => handleActive(item.id)}

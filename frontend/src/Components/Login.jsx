@@ -46,7 +46,7 @@ const Login = () => {
           disabled={isLoading}
           type="submit"
           onClick={handleSubmit}
-          className="px-8 rounded-full bg-[#4A16D8] text-white py-3 my-5 lg:my-8 w-[280px] text-[24px] font-semibold"
+          className="px-8 rounded-full bg-[#3b82f6] text-white py-3 my-5 lg:my-8 w-[280px] text-[24px] font-semibold"
         >
           Log In
         </button>

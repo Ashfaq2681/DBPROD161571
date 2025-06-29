@@ -92,11 +92,11 @@ const Signup = () => {
             />
             <label htmlFor="terms" className="text-[13px] text-start leading-4">
               By signing the account. you accept our{" "}
-              <a href="#" className="text-[#4A16D8] hover:underline">
+              <a href="#" className="text-[#3b82f6] hover:underline">
                 Terms & Conditions
               </a>{" "}
               and{" "}
-              <a href="#" className="text-[#4A16D8] hover:underline">
+              <a href="#" className="text-[#3b82f6] hover:underline">
                 Privacy Policy
               </a>
             </label>
@@ -107,7 +107,7 @@ const Signup = () => {
           disabled={isLoading}
           type='button'
           onClick={handleSubmit}
-          className="cursor-pointer px-8 rounded-full bg-[#4A16D8] text-white py-3 my-5 w-[280px] text-[24px] font-semibold"
+          className="cursor-pointer px-8 rounded-full bg-[#3b82f6] text-white py-3 my-5 w-[280px] text-[24px] font-semibold"
         >
           Sign Up
         </button>

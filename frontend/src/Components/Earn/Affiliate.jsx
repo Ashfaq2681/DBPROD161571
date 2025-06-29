@@ -20,7 +20,7 @@ const Affiliate = () => {
             with HarryPhoto is a fantastic way to monetize your platform while
             sharing valuable resources with your followers.
           </p>
-          <button className="nav-btn bg-[#4A16D8] text-white border border-[#4A16D8]">
+          <button className="nav-btn bg-[#3b82f6] text-white border border-[#3b82f6]">
             Explore
           </button>
         </div>
@@ -29,7 +29,7 @@ const Affiliate = () => {
         <div className="relative mt-16 left-1/2 flex w-[20rem] sm:w-[25rem] md:w-[30rem] lg:w-[45rem] aspect-square border-4 border-[#D9D9D9] rounded-full -translate-x-1/2 scale:75 md:scale-100 ">
           <div className="flex w-32 sm:w-40 md:w-52 lg:w-40 aspect-square m-auto rounded-full">
             <div className="flex items-center justify-center w-full h-full bg-n-8 rounded-full">
-              <p className="text-[30px] md:text-[50px] lg:text-[80px] font-bold text-center text-[#4A16D8]">
+              <p className="text-[30px] md:text-[50px] lg:text-[80px] font-bold text-center text-[#3b82f6]">
                 How Affiliate Work?
               </p>
             </div>
@@ -47,7 +47,7 @@ const Affiliate = () => {
                     index * 45
                   }`}
                 >
-                  <p className="text-[16px] md:text-[20px] lg:text-[30px] rounded-full text-center w-[100px] md:w-[140px] md:py-1 lg:w-[210px] lg:py-2 bg-[#4A16D8] text-white border border-[#4A16D8]">
+                  <p className="text-[16px] md:text-[20px] lg:text-[30px] rounded-full text-center w-[100px] md:w-[140px] md:py-1 lg:w-[210px] lg:py-2 bg-[#3b82f6] text-white border border-[#3b82f6]">
                     {app.title}
                   </p>
                 </div>
@@ -57,7 +57,7 @@ const Affiliate = () => {
         </div>
       </div>
       <div className="bg-[#F5F5F5] flex flex-col items-center gap-8 my-10 text-[#505153] px-8 md:px-10 py-20 text-center mt-60">
-        <p className="text-[#4A16D8] text-[30px] font-bold bg-white px-8 py-1 shadow-xl rounded-md">
+        <p className="text-[#3b82f6] text-[30px] font-bold bg-white px-8 py-1 shadow-xl rounded-md">
           Join Our Affiliate Program
         </p>
         <p className="text-[24px] font-bold max-w-[750px]">
@@ -105,7 +105,7 @@ const Affiliate = () => {
                 placeholder="Type Your Message Here"
                 rows={10}
               />
-              <button className="px-8 rounded-full py-1 bg-[#4A16D8] text-white border border-[#4A16D8] float-end">
+              <button className="px-8 rounded-full py-1 bg-[#3b82f6] text-white border border-[#3b82f6] float-end">
                 Submit
               </button>
             </form>
